@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/jsconfig",
+  "name": "ease-reactify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/dist/index.js",
+  "exports": {
+    ".": {
+      "types": "build/es/index.d.ts",
+      "import": "build/es/index.js",
+      "require": "build/lib/index.js"
+    }
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

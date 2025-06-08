@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/jsconfig",
+  "name": "@ztk63lrd/components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "exports": {
+    ".": {
+      "types": "./packages/build/es/index.d.ts",
+      "import": "./packages/build/es/index.js",
+      "require": "./packages/build/lib/index.js"
+    }
+  },
+  "files": [
+    "packages/build"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
