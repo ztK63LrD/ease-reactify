@@ -3,17 +3,7 @@
   "name": "@ztk63lrd/components",
   "version": "1.0.0",
   "description": "",
-  "main": "",
-  "exports": {
-    ".": {
-      "types": "./packages/build/es/index.d.ts",
-      "import": "./packages/build/es/index.js",
-      "require": "./packages/build/lib/index.js"
-    }
-  },
-  "files": [
-    "packages/build"
-  ],
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

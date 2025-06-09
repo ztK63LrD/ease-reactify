@@ -7,6 +7,16 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@ztk63lrd/components':
+        specifier: workspace:*
+        version: link:packages/components
+      '@ztk63lrd/utils':
+        specifier: workspace:*
+        version: link:packages/utils
+      ease-reactify:
+        specifier: workspace:*
+        version: link:packages
     devDependencies:
       '@eslint/js':
         specifier: ^9.25.0
@@ -56,6 +66,8 @@ importers:
       vite-plugin-dts:
         specifier: ^4.5.4
         version: 4.5.4(@types/node@22.15.30)(typescript@5.8.3)(vite@6.3.5)
+
+  packages: {}
 
   packages/components: {}
 

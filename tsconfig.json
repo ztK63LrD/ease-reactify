@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/jsconfig",
   "compilerOptions": {
     // 基础配置
     "module": "esnext", // 指定生成哪个模块系统代码

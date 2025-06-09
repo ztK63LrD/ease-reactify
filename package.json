@@ -12,6 +12,8 @@
   },
   "peerDependencies": {
     "ease-reactify": "workspace:*",
+    "@ztk63lrd/utils": "workspace:*",
+    "@ztk63lrd/components": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

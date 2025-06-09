@@ -4,11 +4,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "build/dist/index.js",
+  "types": "build/es/index.d.ts",
   "exports": {
     ".": {
-      "types": "build/es/index.d.ts",
-      "import": "build/es/index.js",
-      "require": "build/lib/index.js"
+      "types": "./build/es/index.d.ts",
+      "import": "./build/es/index.js",
+      "require": "./build/lib/index.js"
     }
   },
   "files": [

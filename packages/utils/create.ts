@@ -32,17 +32,17 @@ const _bem = (prefixName: string, blockSuffix: string, element: string, modifier
 }
 
 // 创建命名空间
-const createNameSpace = (name: string) => {
+export const createNameSpace = (name: string) => {
     const prefixName = `ease-${name}`
     return createBEM(prefixName)
 };
 
-const bem = createNameSpace('icon')
-console.log(bem.block('block'))
-console.log(bem.element('element'))
-console.log(bem.modifier('modifier'))
-console.log(bem.be('block', 'element'))
-console.log(bem.bm('block', 'modifier'))
-console.log(bem.em('element', 'modifier'))
-console.log(bem.bem('block', 'element', 'modifier'))
-console.log(bem.is('checked', true))
+// const bem = createNameSpace('icon')
+// console.log(bem.block('block'))
+// console.log(bem.element('element'))
+// console.log(bem.modifier('modifier'))
+// console.log(bem.be('block', 'element'))
+// console.log(bem.bm('block', 'modifier'))
+// console.log(bem.em('element', 'modifier'))
+// console.log(bem.bem('block', 'element', 'modifier'))
+// console.log(bem.is('checked', true))

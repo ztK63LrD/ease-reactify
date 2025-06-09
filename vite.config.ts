@@ -12,14 +12,14 @@ export default defineConfig({
     dts({
       tsconfigPath: 'tsconfig.json', // 指向tsconfig.json文件
       entryRoot: './packages/components', // 指向组件库源代码目录
-      outDir: './packages/build/es',  // 指向组件库声明文件输出目录
+      outDir: ['./packages/build/es', './packages/build/lib'],  // 指向组件库声明文件输出目录
       exclude: ['node_modules', 'docs', 'review', 'vite.config.ts'], // 排除的文件
     }),
     dts({
       tsconfigPath: 'tsconfig.json',
-      entryRoot: 'packages/components',
-      outDir: 'packages/build/lib',
-      exclude: ['node_modules', 'docs', 'review', 'vite.config.ts'],
+      entryRoot: './packages',
+      outDir: ['./packages/build/es', './packages/build/lib'],
+      exclude: ['node_modules', 'docs', 'review', 'vite.config.ts', './packages/components'],
     }),
   ],
   resolve: {
