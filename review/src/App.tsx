@@ -1,10 +1,10 @@
-import { Icon } from 'ease-reactify'
+import { EIcon, EButton } from 'ease-reactify'
 
 const App = () => {
 
   return (
     <>
-      <Icon color='red' size={10}></Icon>
+      <EIcon color='red' size={10}></EIcon>
     </>
   )
 }

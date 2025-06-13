@@ -1,0 +1,34 @@
+@use 'config' as *;
+@forward 'config';
+
+// ease-button
+@mixin b($block) {
+    $B: $namespace + '-' + $block;
+    .#{$B} {
+        @content;
+    }
+}
+// ease-button.is-disabled
+@mixin when($state) {
+    @at-root {
+        &.#{$state-prefix + $state} {
+            @content;
+        }
+    }
+}
+// &--primary => .ease-button--primary
+@mixin m($modifier) {
+    @at-root {
+        #{& + $modifier-separator + $modifier} {
+            @content;
+        }
+    }
+}
+// &__header => .ease-button__header
+@mixin e($element) {
+    @at-root {
+        #{& + $element-separator + $element} {
+            @content;
+        }
+    }
+}
