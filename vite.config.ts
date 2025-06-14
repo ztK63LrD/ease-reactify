@@ -78,11 +78,12 @@ export default defineConfig({
           exports: 'named',
           name: 'ease-reactify-ui',
           dir: 'packages/build/dist',
-          sourcemap: true,
+          sourcemap: true, // 只在 UMD 格式下生成 sourcemap
           globals: {
             'react': 'React',
             'react-dom': 'ReactDOM',
             'react/jsx-runtime': 'jsxRuntime',
+            'clsx': 'clsx'
           }
         },
       ],

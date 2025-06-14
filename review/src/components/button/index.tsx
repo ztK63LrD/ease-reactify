@@ -1,11 +1,11 @@
-// import EButton from "@ztk63lrd/components/button"
-import { EButton } from "ease-reactify";
+import EButton from "@ztk63lrd/components/button"
+// import { EButton } from "ease-reactify";
 
 
 const ButtonView = () => {
   return (
     <div>
-        <EButton size="middle" type="primary" shape="round" disabled={true}>按钮</EButton>
+        <EButton size="middle" type="primary" shape="round" disabled={false}>按钮</EButton>
     </div>
   )
 }

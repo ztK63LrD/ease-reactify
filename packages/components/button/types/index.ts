@@ -21,7 +21,7 @@ type MergedHTMLAttributes = Omit<
     'type' | 'color' | 'disabled' | 'children'
 >;
 
-interface inheritProps extends BaseButtonProps, MergedHTMLAttributes {
+export interface inheritProps extends BaseButtonProps, MergedHTMLAttributes {
     href: string;
     autoInsertSpace: boolean;
 }

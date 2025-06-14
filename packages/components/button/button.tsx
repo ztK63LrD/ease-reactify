@@ -2,7 +2,7 @@ import React, { forwardRef, useCallback } from 'react';
 import { createNameSpace } from "@ztk63lrd/utils/create"
 import clsx from 'clsx';
 import type { ButtonProps } from './types';
-import "./styles/index.css"
+import "./styles/index.scss"
 
 // 将一个 ref 转发到子组件的 DOM 元素或者子组件内部的某个元素
 const EButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {

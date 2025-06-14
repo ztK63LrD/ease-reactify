@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // Color system
 $white: #FFFFFF !default;
 $gray-100: #f8f9fa !default;
@@ -68,7 +70,7 @@ $h6-font-size: $font-size-base !default;
 // 链接
 $link-color: $primary !default;
 $link-decoration: none !default;
-$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-color: adjust($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
 
 // body
@@ -82,7 +84,7 @@ $paragraph-margin-bottom: 1rem !default;
 // 边框和边距的设置
 $spacer: 1rem !default;
 $spacers: () !default;
-$spacers: map-merge(
+$spacers: map.merge(
   (0: 0, 1: ($spacer * .25), 2: ($spacer * .5), 3: $spacer, 4: ($spacer * 1.5), 5: ($spacer * 3)),
   $spacers
 );
