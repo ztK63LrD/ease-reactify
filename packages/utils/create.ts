@@ -9,7 +9,7 @@
 const createBEM = (prefixName: string) => {
     const block = (blockSuffix: string = '') => _bem(prefixName, blockSuffix, '', '')
     const element = (element: string) => element ? _bem(prefixName, '', element, '') : ''
-    const modifier = (modifier: string) => modifier ? _bem(prefixName, '', '', modifier) : ''
+    const modifier = (modifier: string | undefined) => modifier ? _bem(prefixName, '', '', modifier) : ''
     const be = (blockSuffix: string = '', element: string = '') => 
         blockSuffix && element ? _bem(prefixName, blockSuffix, element, '') : ''
     const bm = (blockSuffix: string = '', modifier: string = '') => 
@@ -18,7 +18,7 @@ const createBEM = (prefixName: string) => {
         element && modifier ? _bem(prefixName, '', element, modifier) : ''
     const bem = (blockSuffix: string = '', element: string = '', modifier: string = '') => 
         blockSuffix && element && modifier ? _bem(prefixName, blockSuffix, element, modifier) : ''
-    const is = (name: string, state: boolean) => (state ? `is-${name}` : "")
+    const is = (name: string, state: boolean | undefined) => (state ? `is-${name}` : "")
 
     return { block, element, modifier, be, bm, em, bem, is }
 };

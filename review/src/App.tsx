@@ -1,12 +1,10 @@
-import { EIcon, EButton } from 'ease-reactify'
+import Container from './components'
 
 const App = () => {
 
-  return (
-    <>
-      <EIcon color='red' size={10}></EIcon>
-    </>
-  )
+    return (
+        <Container />
+    )
 }
 
 export default App
