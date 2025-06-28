@@ -1,39 +1,122 @@
-@use '../../style/mixins' as *;
-@use '../../style/tools' as *;
-@use '../../style/_variables' as *;
+@use '../../style/utils/mixins' as *;
+@use '../../style/utils/tools' as *;
+@use '../../style/utils/publics' as *;
+@use '../../style/common/var' as *;
+
+// @include b(button) { // bem规范
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     cursor: pointer;
+//     outline: none;
+//     border: #fafafa;
+//     border-radius: 5px;
+//     user-select: none;
+//     min-height: 40px;
+//     line-height: 1;
+//     vertical-align: middle;
+//     padding: 0 20px;
+//     @include m(small) {
+//         padding: 0 15px;
+//     }
+//     @include m(middle) {
+//         padding: 0 20px;
+//     }
+//     @include m(large) {
+//         padding: 0 25px;
+//     }
+//     @include m(round) {
+//         border-radius: 20px;
+//     }
+//     @include m(primary) {
+//         background-color: $primary;
+//         color: #fff;
+//     }
+//     @include when(disabled) {
+//         &,
+//         &:hover,
+//         &:focus {
+//             cursor: not-allowed;
+//         }
+//     }
+// }
 
 @include b(button) {
-    // bem规范
-    align-items: center;
-    display: inline-flex;
-    cursor: pointer;
+    @include inline-flex;
+    @include color-bg-border-variant($white, $primary, transparent);
     outline: none;
-    border: #fafafa;
+    
     border-radius: 5px;
-    user-select: none;
-    min-height: 40px;
-    line-height: 1;
-    vertical-align: middle;
-    padding: 0 20px;
+    height: 32px;
+    padding: 0 14px;
+    text-align: center;
+
+    cursor: pointer; /* 不再使用 var */
+
+    &:hover {
+        background-color: $primary-hover;
+    }
+
+    &:active {
+        background-color: $primary;
+    }
+
+    // // 使用映射简化样式应用
+    // @each $type, $color in $button-colors {
+    //     @include m(#{$type}) {
+    //         background-color: $color;
+    //     }
+    // }
+
     @include m(small) {
-        padding: 0 20px;
+        padding: 5px 10px;
     }
-    @include m(middle) {
-        padding: 0 20px;
+
+    @include m(medium) {
+        padding: 10px 15px;
     }
+
     @include m(large) {
-        padding: 0 25px;
+        padding: 15px 20px;
     }
-    @include m(round) {
-        border-radius: 20px;
+
+    @include when(round) {
+        border-radius: 10px;
     }
-    @include m(primary) {
+
+    @include when(circle) {
+        aspect-ratio: 1 / 1;
+        border-radius: 100%;
     }
-    @include when(disabled) {
-        &,
-        &:hover,
-        &:focus {
-            cursor: not-allowed;
-        }
-    }
+
+    // @include when(loading) {
+    //     @include button-variant($color-black, $color-grey, $color-grey);
+    // }
+
+    // @include when(disabled) {
+    //     @include button-variant($color-black, $color-grey, $color-black);
+
+    //     &,
+    //     &:hover,
+    //     &:focus {
+    //         cursor: not-allowed;
+    //     }
+    // }
+
+    // @include when(toTop) {
+    //     position: fixed;
+    //     top: 80%;
+    //     right: 10%;
+    //     user-select: none;
+    //     pointer-events: none;
+    //     opacity: 0;
+    //     z-index: 100;
+    // }
+
+    // @include when(visible) {
+    //     box-shadow: 1px 2px 2px rgba($color: #909090, $alpha: 0.1),
+    //         2px 2px 2px rgba($color: #909090, $alpha: 0.2);
+    //     pointer-events: initial;
+    //     opacity: 1;
+    // }
 }

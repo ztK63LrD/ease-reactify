@@ -1,3 +1,5 @@
+// 引入Sass模块
+@use "sass:color";
 @use "sass:map";
 
 // Color system
@@ -26,7 +28,8 @@ $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 
 // 系统色板
-$primary: $blue !default;
+$primary: $orange !default;
+$primary-hover: color.adjust($primary, $lightness: 10%) !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;

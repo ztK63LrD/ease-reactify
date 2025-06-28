@@ -1,5 +1,5 @@
-@use 'config' as *;
-@forward 'config';
+@use '../config/base' as *;
+@forward '../config/base';
 
 // ease-button
 @mixin b($block) {

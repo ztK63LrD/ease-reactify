@@ -1,0 +1,23 @@
+@use 'sass:color';
+@use './var' as *;
+@use '../utils/publics' as *;
+
+/* 生成全局变量 */
+$css-vars: (
+    'primary': $primary,
+    'primary-hover': $primary-hover,
+    'white': $white,
+    'grey': $grey,
+    'black': $black,
+    'success': $success,
+    'danger': $danger,
+    'warning': $warning,
+    'info': $info,
+    'shadow-around': $shadow-around
+);
+
+:root {
+    @each $name, $value in $css-vars {
+        @include set-css-var-value($name, $value);
+    }
+}

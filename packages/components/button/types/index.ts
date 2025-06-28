@@ -26,5 +26,5 @@ export interface inheritProps extends BaseButtonProps, MergedHTMLAttributes {
     autoInsertSpace: boolean;
 }
 
-// 使所有属性可选且只读
+// 使所有属性可选(Partial)且只读(Readonly)
 export type ButtonProps = Readonly<Partial<inheritProps>>;
