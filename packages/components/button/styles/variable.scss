@@ -16,6 +16,14 @@ $button-hover: (
     warning: $warning-hover,
     danger: $danger-hover
 );
+/* 朴素类型 */
+$button-plain: (
+    primary: $primary-plain,
+    info: $info-plain,
+    success: $success-plain,
+    warning: $warning-plain,
+    danger: $danger-plain
+);
 
 /* size尺寸 */
 $button-size: (
