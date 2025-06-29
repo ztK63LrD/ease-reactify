@@ -1,0 +1,38 @@
+@use '../../style/common/var' as *;
+
+/* type类型 */
+$button-colors: (
+    primary: $primary,
+    info: $info,
+    success: $success,
+    warning: $warning,
+    danger: $danger
+);
+/* hover类型 */
+$button-hover: (
+    primary: $primary-hover,
+    info: $info-hover,
+    success: $success-hover,
+    warning: $warning-hover,
+    danger: $danger-hover
+);
+
+/* size尺寸 */
+$button-size: (
+    large: 0px 20px,
+    middle: 0px 15px,
+    small: 0px 7px,
+);
+/* size尺寸高度 */
+$button-height: (
+    large: 40px,
+    middle: 32px,
+    small: 24px,
+);
+
+/* 按钮性状 */
+$button-shape: (
+    default: $border-radius,
+    round: $border-radius-sm,
+    circle: $border-radius-lg,
+)

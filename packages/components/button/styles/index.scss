@@ -2,92 +2,62 @@
 @use '../../style/utils/tools' as *;
 @use '../../style/utils/publics' as *;
 @use '../../style/common/var' as *;
-
-// @include b(button) { // bem规范
-//     display: inline-flex;
-//     align-items: center;
-//     justify-content: center;
-//     cursor: pointer;
-//     outline: none;
-//     border: #fafafa;
-//     border-radius: 5px;
-//     user-select: none;
-//     min-height: 40px;
-//     line-height: 1;
-//     vertical-align: middle;
-//     padding: 0 20px;
-//     @include m(small) {
-//         padding: 0 15px;
-//     }
-//     @include m(middle) {
-//         padding: 0 20px;
-//     }
-//     @include m(large) {
-//         padding: 0 25px;
-//     }
-//     @include m(round) {
-//         border-radius: 20px;
-//     }
-//     @include m(primary) {
-//         background-color: $primary;
-//         color: #fff;
-//     }
-//     @include when(disabled) {
-//         &,
-//         &:hover,
-//         &:focus {
-//             cursor: not-allowed;
-//         }
-//     }
-// }
+@use './variable.scss' as *;
 
 @include b(button) {
     @include inline-flex;
-    @include color-bg-border-variant($white, $primary, transparent);
+    @include color-bg-border-variant($white, $default, transparent);
+    height: 2rem;
+    padding: 0px 15px;
     outline: none;
-    
-    border-radius: 5px;
-    height: 32px;
-    padding: 0 14px;
-    text-align: center;
-
-    cursor: pointer; /* 不再使用 var */
-
-    &:hover {
-        background-color: $primary-hover;
+    border: 1px solid;
+    border-radius: $border-radius;
+    cursor: pointer;
+    // #region 处理不同type类型(使用映射简化样式应用)
+    @include m(default) {
+        @include color-bg-border-variant($black, $white, $border-color);
+        &:hover {
+            color: $primary;
+            border-color: $primary;
+        }
+        &:active {
+            background-color: transparent;
+        }
     }
-
-    &:active {
-        background-color: $primary;
+    @each $type, $color in $button-colors {
+        @include m(#{$type}) {
+            background-color: $color;
+            // 获取当前类型对应的悬停颜色
+            $hover-color: map-get($button-hover, $type);
+            // 设置该类型按钮的悬停样式
+            &:hover {
+                background-color: $hover-color;
+            }
+            &:active {
+                background-color: $color;
+            }
+        }
     }
+    // #endregion
 
-    // // 使用映射简化样式应用
-    // @each $type, $color in $button-colors {
-    //     @include m(#{$type}) {
-    //         background-color: $color;
-    //     }
-    // }
-
-    @include m(small) {
-        padding: 5px 10px;
+    // #region 处理不同size类型
+    @each $type, $size in $button-size {
+        @include m(#{$type}) {
+            padding: $size;
+            // 获取当前类型对应的高度
+            $size-height: map-get($button-height, $type);
+            height: $size-height;
+        }
     }
+    // #endregion
 
-    @include m(medium) {
-        padding: 10px 15px;
+    // #region 处理不同形状
+    @each $type, $shape in $button-shape {
+        @include m(#{$type}) {
+            border-radius: $shape;
+        }
     }
-
-    @include m(large) {
-        padding: 15px 20px;
-    }
-
-    @include when(round) {
-        border-radius: 10px;
-    }
-
-    @include when(circle) {
-        aspect-ratio: 1 / 1;
-        border-radius: 100%;
-    }
+    // #endregion
 
     // @include when(loading) {
     //     @include button-variant($color-black, $color-grey, $color-grey);

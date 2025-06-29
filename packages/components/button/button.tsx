@@ -14,7 +14,7 @@ const EButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     // #region 组件样式构建
     const classes = clsx( // 使用 clsx 动态构建类名
         bem.block(), // 基础类名
-        bem.modifier(type), // type 修改器
+        bem.modifier(type || 'default'), // type 修改器
         bem.modifier(shape), // shape 修改器
         bem.modifier(size), // size 修改器
         bem.is('disabled', disabled), // disabled 状态

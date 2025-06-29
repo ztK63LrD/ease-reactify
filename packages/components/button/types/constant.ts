@@ -1,6 +1,6 @@
 // #region 规范按钮组件的常量类型
 // 定义包含五种按钮类型的元组
-const _ButtonTypes = ['default', 'primary', 'dashed', 'link', 'text'] as const;
+const _ButtonTypes = ['default', 'primary', 'info', 'success', 'warning', 'danger'] as const;
 export type ButtonType = (typeof _ButtonTypes)[number]; // 限制组件属性的取值范围
 
 // 定义包含三种按钮形状的元组
