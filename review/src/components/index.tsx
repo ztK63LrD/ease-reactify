@@ -1,22 +1,35 @@
-import Button from './button'
-import './index.css'
+import { useState } from "react";
+import Button from "./button";
+import "./index.scss";
+
+const modules: any = {
+    Button,
+    ButtonView: () => <div>213</div>,
+};
 
 const Container = () => {
-  return (
-    <div className='container'>
-        <Application>
-            <Button />
-        </Application>
-    </div>
-  )
-}
+    const [current, setCurrent] = useState(0);
 
-export default Container
-
-const Application = ({ children }: any) => {
     return (
-        <div>
-            {children}
+        <div className="container">
+            <div className="container-left">
+                {Object.keys(modules).map((key, index) => {
+                    return (
+                        <div
+                            key={key}
+                            className={`menu-item ${current === index ? 'active' : ''}`}
+                            onClick={() => setCurrent(index)}
+                        >
+                            {key}
+                        </div>
+                    );
+                })}
+            </div>
+            <div className="container-right">
+                {modules[Object.keys(modules)[current]]()}
+            </div>
         </div>
-    )
-}
+    );
+};
+
+export default Container;
