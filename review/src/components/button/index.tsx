@@ -31,7 +31,7 @@ const ButtonView = () => {
           <EButton type="success" plain>按钮</EButton>
           <EButton type="info" plain>按钮</EButton>
           <EButton type="warning" plain>按钮</EButton>
-          <EButton type="danger" plain>按钮</EButton>
+          <EButton type="danger" plain className="test">按钮</EButton>
         </div>
     </div>
   )

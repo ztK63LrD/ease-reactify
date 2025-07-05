@@ -8,7 +8,7 @@ import "./styles/index.scss"
 const EButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     // #region 组件变量声明
     const bem = createNameSpace('button');
-    const { type, shape, htmlType = 'button',  size, plain, disabled, loading, color, children, ...rest } = props;
+    const { type, shape, htmlType = 'button', size, plain, disabled, loading, color, children, className, ...rest } = props;
     // #endregion
 
     // #region 组件样式构建
@@ -19,7 +19,8 @@ const EButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
         bem.modifier(size), // size 修改器
         bem.is('plain', plain), // plain 朴素状态
         bem.is('disabled', disabled), // disabled 状态
-        bem.is('loading', loading) // loading 状态
+        bem.is('loading', loading), // loading 状态
+        className, // 用户自定义类名
     );
     // #endregion
 
