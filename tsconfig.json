@@ -11,9 +11,10 @@
     "esModuleInterop": true, // 允许从默认导出导入模块
     "allowSyntheticDefaultImports": true, // 允许从没有默认导出的模块中默认导入
     "removeComments": true, // 删除注释
-    "noEmit": true, // 
+    "noEmit": true, // 不生成输出文件
     "composite": false, // 不允许构建引用项目
-
+    "types": ["vitest/globals"],
+    
     // 类型校验
     "skipLibCheck": true, // 跳过所有声明文件的类型检查
     "strict": true, // 启用所有严格类型检查选项
