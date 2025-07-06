@@ -1,6 +1,7 @@
 @use '../../style/utils/index' as *;
 @use '../../style/common/var' as *;
 @use './variable.scss' as *;
+@use 'sass:map';
 
 @include b(button) {
     @include inline-flex;
@@ -26,7 +27,7 @@
         @include m(#{$type}) {
             background-color: $color;
             // 获取当前类型对应的悬停颜色
-            $hover-color: map-get($button-hover, $type);
+            $hover-color: map.get($button-hover, $type);
             // 设置该类型按钮的悬停样式
             &:hover {
                 background-color: $hover-color;
@@ -43,7 +44,7 @@
         @include m(#{$type}) {
             padding: $size;
             // 获取当前类型对应的高度
-            $size-height: map-get($button-height, $type);
+            $size-height: map.get($button-height, $type);
             height: $size-height;
         }
     }
@@ -63,7 +64,7 @@
             @include when(plain) {
                 background-color: $color;
                 // 获取当前类型对应的悬停颜色
-                $hover-color: map-get($button-hover, $type);
+                $hover-color: map.get($button-hover, $type);
                 // 设置该类型按钮的悬停样式
                 &:hover {
                     background-color: $hover-color;
