@@ -1,7 +1,7 @@
 import { expect, test, describe, it, vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react"
-import '@testing-library/jest-dom'
 import EButton, { ButtonProps } from "../index";
+import '@testing-library/jest-dom'
 
 const defaultProps = {
     onClick: vi.fn()
