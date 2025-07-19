@@ -3,23 +3,28 @@
 layout: home
 
 hero:
-  name: "ease-reactify组件库"
-  text: "ease-reactify-ui"
-  tagline: My great project tagline
+  name: Vue3 Component Library Starter Template
+  text: Provides VitePress documentation
+  tagline: Supports building ESM, CJS and UMD formats.
+  image:
+    src: /logo-large.png
+    alt: Logo Image
+    width: 200px
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Getting Started
+      link: /guide/getting-started
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Source Code
+      link: https://github.com/starter-collective/starter-lib-vue3
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Bundle with Vite
+    details: Build package with Vite - Bundle your Vue3 component library with simple config.
+  - title: Unit Test
+    details: Out-of-the-box unit testing with Vitest.
+  - title: VitePress documentation
+    details: Deploy on Netlify with zero-config, supports other deployment methods as well.
+  - title: Publish & Version
+    details: Manage versions using the CLI, and publish to npm with zero-config
 ---
-
