@@ -44,8 +44,8 @@ export const zh = defineConfig({
       text: '最后更新于',
     },
     footer: {
-      message: '基于 MIT 许可证发布。',
-      copyright: '版权 © 2024-present Kieran Wang',
+      message: '基于 MIT 许可证发布',
+      copyright: '版权所有 © 2025-2026 ztK63LrD',
     },
   },
 })

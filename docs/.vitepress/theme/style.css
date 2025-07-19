@@ -1,11 +1,17 @@
+:root:where(:lang(fa)) {
+  --vp-font-family-base:
+    'Vazirmatn', 'Inter', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
 :root {
-  --vp-c-brand-1: #42b883;
-  --vp-c-brand-2: #249252;
-  --vp-c-brand-3: #19633b;
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #35495e -80%, #42b883);
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #42b88380 30%, #35495e80);
-  --vp-home-hero-image-filter: blur(30px);
+    --vp-c-brand-1: #fd7e14; /* 边框颜色 */
+    --vp-c-brand-2: #da6d14; /* 悬停颜色 */
+    --vp-c-brand-3: #fd7e14; /* 按钮颜色 */
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #f9c68e 30%, #ff8441); /* 标题渐变色 */
+    --vp-home-hero-image-background-image: linear-gradient(-45deg, #f0ba3d 30%, #ffc05b); /* 背景渐变色 */
+    --vp-home-hero-image-filter: blur(30px);
 }
 
 @media (min-width: 640px) {
@@ -16,7 +22,7 @@
 
 @media (min-width: 960px) {
   :root {
-    --vp-home-hero-image-filter: blur(72px);
+    --vp-home-hero-image-filter: blur(68px);
   }
 }
 
