@@ -1,28 +1,20 @@
 import { defineConfig } from 'vitepress'
-import pkg from '../../../../package.json'
 import { GITHUB_URL } from '../common/constants'
+import { nav, searchOptions } from './components/zh-config'
 
 export const zh = defineConfig({
   lang: 'zh-CN',
-  description: 'Vue 3 组件库启动模板，提供 VitePress 文档，支持构建 ESM、CJS 和 UMD 格式。',
+  description: '高效React组件库',
   themeConfig: {
     editLink: {
       pattern: `${GITHUB_URL}/edit/main/docs/:path`,
       text: '在 GitHub 上编辑此页面',
     },
-    nav: [
-      { text: '指南', link: '/locales/zh/guide/what-is', activeMatch: '/zh/guide/' },
-      { text: '组件', link: '/locales/zh/components', activeMatch: '/zh/components/' },
-      {
-        text: `v${pkg.version}`,
-        items: [
-          {
-            text: '更新日志',
-            link: `${GITHUB_URL}/releases`,
-          },
-        ],
-      },
-    ],
+    nav: nav(), 
+    search: {
+        provider: 'local',
+        options: searchOptions() 
+    },
     sidebar: [
       {
         text: '指南',

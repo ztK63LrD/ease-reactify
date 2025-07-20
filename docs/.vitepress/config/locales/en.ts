@@ -4,9 +4,9 @@ import { GITHUB_URL } from '../common/constants'
 
 export const en = defineConfig({
   lang: 'en-US',
-  description: 'Vue 3 component library starter template, provides VitePress documentation, supports building ESM, CJS and UMD formats.',
+  description: 'Efficient React component library',
   themeConfig: {
-    editLink: {
+    editLink: { // 编辑链接
       pattern: `${GITHUB_URL}/edit/main/docs/:path`,
       text: 'Edit this page on GitHub',
     },
@@ -45,7 +45,7 @@ export const en = defineConfig({
     },
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2024-present Kieran Wang',
+      copyright: 'Copyright © 2024-2026 ztK63LrD',
     },
   },
 })
