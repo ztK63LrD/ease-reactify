@@ -38,6 +38,21 @@ $ bun add -D vitepress
 
 :::
 
+::: code-group
+```bash [npm]
+npm install -D vitest
+```
+```bash [yarn]
+yarn add -D vitest
+```
+```bash [pnpm]
+pnpm add -D vitest
+```
+```bash [bun]
+bun add -D vitest
+```
+:::
+
 ### 完整导入
 
 如果你对打包后的文件大小不是很在乎，那么使用完整导入会更方便。

@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
-import { en } from './locales/en'
+import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { shared } from './common/shared'
 import { zh } from './locales/zh'
+import { en } from './locales/en'
 
 export default defineConfig({
   ...shared,
@@ -22,5 +23,8 @@ export default defineConfig({
       host: true,
       port: 9865,
     },
+    plugins: [
+      groupIconVitePlugin() as any,
+    ],
   },
 })

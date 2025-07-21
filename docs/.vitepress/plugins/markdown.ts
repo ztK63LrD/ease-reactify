@@ -5,6 +5,11 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { cwd } from 'node:process'
 import markdownItContainer from 'markdown-it-container'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin,
+} from 'vitepress-plugin-group-icons'
 import { createHighlighter } from 'shiki'
 
 interface ContainerOpts {
@@ -24,6 +29,8 @@ export async function MarkdownPlugin(md: MarkdownIt): Promise<void> {
     themes: ['github-light', 'github-dark'],
     langs: ['vue', 'vue-html', 'typescript', 'javascript'],
   })
+  md.use(tabsMarkdownPlugin)
+  md.use(groupIconMdPlugin)
 
 //   md.use(markdownItContainer, 'example', {
 //     validate(params) {

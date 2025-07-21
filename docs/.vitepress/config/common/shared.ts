@@ -1,6 +1,8 @@
 import { defineConfig } from 'vitepress'
 import { MarkdownPlugin } from '../../plugins'
 import { GITHUB_URL, WEBSITE_URL } from './constants'
+import {groupIconMdPlugin, groupIconVitePlugin} from 'vitepress-plugin-group-icons'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 export const shared = defineConfig({
   title: 'ease-reactify',
@@ -38,8 +40,13 @@ export const shared = defineConfig({
       level: [2, 3], // 启用侧边目录
     },
   },
+
   markdown: { // 启用自定义 Markdown 插件
-    config: md => MarkdownPlugin(md),
+    // config: md => MarkdownPlugin(md),
+      config(md) {
+        md.use(tabsMarkdownPlugin)
+        md.use(groupIconMdPlugin)
+      },
     theme: {
       light: 'github-light',
       dark: 'github-dark',
