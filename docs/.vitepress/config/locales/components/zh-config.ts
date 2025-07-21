@@ -6,7 +6,7 @@ export const nav: () => DefaultTheme.NavItem[] = () => {
     return [
         {
             text: '指南',
-            link: 'guide/index',
+            link: 'guide/introduce',
             activeMatch: 'guide/'
         },
         {

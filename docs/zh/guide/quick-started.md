@@ -1,21 +1,39 @@
-# 立即开始
+# 快速上手
+  本节将介绍如何在项目中使用 `Ease-Reactify`。
 
-本节将帮助您设置并开始使用 `starter-lib-vue3`。
+  ease-reactify（发音为 "ez reactify"） 是基于 Vite 框架驱动的React UI 框架。
+
+  你可以在 [简介设计](./introduce.md) 中了解有关该项目背后的基本原理的更多信息。
 
 ## 使用包管理器
+
+- [Node.js](https://nodejs.org/) 18 及以上版本。
+- 通过命令行界面 (CLI) 访问 VitePress 的终端。
+- 支持 [Markdown](https://en.wikipedia.org/wiki/Markdown) 语法的编辑器。
+  - 推荐 [VSCode](https://code.visualstudio.com/) 及其[官方 Vue 扩展](https://marketplace.visualstudio.com/items?itemName=Vue.volar)。
+
+VitePress 可以单独使用，也可以安装到现有项目中。在这两种情况下，都可以使用以下方式安装它：
 
 ::: code-group
 
 ```sh [npm]
-npm install starter-lib-vue3
-```
-
-```sh [yarn]
-yarn add starter-lib-vue3
+$ npm add -D vitepress
 ```
 
 ```sh [pnpm]
-pnpm install starter-lib-vue3
+$ pnpm add -D vitepress
+```
+
+```sh [yarn]
+$ yarn add -D vitepress
+```
+
+```sh [yarn (pnp)]
+$ yarn add -D vitepress vue
+```
+
+```sh [bun]
+$ bun add -D vitepress
 ```
 
 :::
