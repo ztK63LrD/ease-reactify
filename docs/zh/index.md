@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /guide/getting-started
+      link: /guide/quick-started
     - theme: alt
       text: 源代码
       link: https://github.com/starter-collective/starter-lib-vue3

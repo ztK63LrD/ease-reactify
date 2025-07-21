@@ -87,17 +87,17 @@ export const searchOptions: () => Partial<DefaultTheme.AlgoliaSearchOptions> = (
 export const sidebarGuide: () => DefaultTheme.SidebarItem[] = () => {
   return [
     {
-      text: '简介',
+      text: '基础',
       collapsed: false,
       items: [
-        { text: '什么是 VitePress？', link: 'what-is-vitepress' },
-        { text: '快速开始', link: 'getting-started' },
-        { text: '路由', link: 'routing' },
-        { text: '部署', link: 'deploy' }
+        { text: '简介设计', link: 'introduce' },
+        { text: '快速上手', link: 'quick-started' },
+        { text: '支持平台', link: 'getting-started' },
+        { text: '更新日志', link: 'routing' },
       ]
     },
     {
-      text: '写作',
+      text: '进阶',
       collapsed: false,
       items: [
         { text: 'Markdown 扩展', link: 'markdown' },
