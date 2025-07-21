@@ -10,17 +10,20 @@ ease-reactify 是一款基于 [React 19](https://react.dev/learn) 开发的高�
 
 ## 设计原则 {#design-principles}
 
-- **文档**
+- **简洁与高效**
 
-  VitePress 附带一个专为技术文档设计的默认主题。你现在正在阅读的这个页面以及 [Vite](https://vitejs.dev/)、[Rollup](https://rollupjs.org/)、[Pinia](https://pinia.vuejs.org/)、[VueUse](https://vueuse.org/)、[Vitest](https://vitest.dev/)、[D3](https://d3js.org/)、[UnoCSS](https://unocss.dev/)、[Iconify](https://iconify.design/) [等](https://www.vuetelescope.com/explore?framework.slug=vitepress)文档都是基于这个主题的。
+  组件库采用了简洁易懂的 API 和配置，使得开发者能迅速上手并应用到项目中。基于 React 19 和 Vite 开发，确保了性能的优化和开发流程的高效性，支持热更新和快速构建。
 
-  [Vue.js 官方文档](https://cn.vuejs.org/)也是基于 VitePress 的。但是为了可以在不同的翻译文档之间切换，它自定义了自己的主题。
+- **可扩展性**
 
-- **博客、档案和营销网站**
+  组件库遵循模块化设计，所有组件都可以独立使用并且易于扩展。开发者可以根据需求轻松定制和调整样式，满足各种项目需求。提供可插拔的功能，支持开发者通过插件和自定义配置来增强或修改组件行为。
 
-  VitePress 支持[完全的自定义主题](./custom-theme)，具有标准 Vite + Vue 应用程序的开发体验。基于 Vite 构建还意味着可以直接利用其生态系统中丰富的 Vite 插件。此外，VitePress 提供了灵活的 API 来[加载数据](./data-loading) (本地或远程)，也可以[动态生成路由](./routing#dynamic-routes)。只要可以在构建时确定数据，就可以使用它来构建几乎任何东西。
+- **一致性**
+  提供统一的设计语言和一致的组件风格，确保项目中的 UI 元素在外观和交互上的统一性，提升用户体验。支持设计系统和主题功能，使得整个应用的界面风格可以根据需要灵活切换。
 
-  [Vue.js 官方博客](https://blog.vuejs.org/)是一个简单的博客页面，它根据本地内容生成其索引页面。
+- **易于测试**
+  组件库集成了 Vitest 进行单元测试，保证组件的稳定性和可靠性。所有主要组件都经过严格的单元测试，确保在不同场景下的高效运作。
+
 
 ## 开发体验 {#developer-experience}
 
