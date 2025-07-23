@@ -6,51 +6,28 @@
   你可以在 [简介设计](./introduce.md) 中了解有关该项目背后的基本原理的更多信息。
 
 ## 使用包管理器
-
-- [Node.js](https://nodejs.org/) 18 及以上版本。
-- 通过命令行界面 (CLI) 访问 VitePress 的终端。
-- 支持 [Markdown](https://en.wikipedia.org/wiki/Markdown) 语法的编辑器。
-  - 推荐 [VSCode](https://code.visualstudio.com/) 及其[官方 Vue 扩展](https://marketplace.visualstudio.com/items?itemName=Vue.volar)。
-
-VitePress 可以单独使用，也可以安装到现有项目中。在这两种情况下，都可以使用以下方式安装它：
+我们建议采用 [npm](https://www.npmjs.com/)、[yarn](https://classic.yarnpkg.com/lang/en/)、[pnpm](https://pnpm.io/zh/) 或 [bun](https://bun.sh/) 作为开发工具。这些包管理工具能为开发环境提供便捷的调试体验，也能为生产环境提供稳定的打包部署能力，让您充分享受现代前端工具链和生态系统带来的优势。
 
 ::: code-group
 
 ```sh [npm]
-$ npm add -D vitepress
+$ npm install ease-reactify --save
 ```
-
 ```sh [pnpm]
-$ pnpm add -D vitepress
+$ pnpm install ease-reactify --save
 ```
-
 ```sh [yarn]
-$ yarn add -D vitepress
+$ yarn add ease-reactify
 ```
-
-```sh [yarn (pnp)]
-$ yarn add -D vitepress vue
-```
-
 ```sh [bun]
-$ bun add -D vitepress
+$ bun add ease-reactify
 ```
-
 :::
 
-::: code-group
-```bash [npm]
-npm install -D vitest
-```
-```bash [yarn]
-yarn add -D vitest
-```
-```bash [pnpm]
-pnpm add -D vitest
-```
-```bash [bun]
-bun add -D vitest
-```
+::: tip 注意
+
+ease-reactify 是仅 ESM 的软件包。不要使用 `require()` 导入它，并确保最新的 `package.json` 包含 `"type": "module"`，或者更改相关文件的文件扩展名，例如 `.vitepress/config.js` 到 `.mjs`/`.mts`。更多详情请参考 [Vite 故障排除指南](http://vitejs.dev/guide/troubleshooting.html#this-package-is-esm-only)。此外，在异步 CJS 上下文中，可以使用 `await import('vitepress')` 代替。
+
 :::
 
 ### 完整导入

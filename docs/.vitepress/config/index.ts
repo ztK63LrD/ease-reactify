@@ -5,26 +5,22 @@ import { zh } from './locales/zh'
 import { en } from './locales/en'
 
 export default defineConfig({
-  ...shared,
-  // I18n config.
-  // https://vitepress.dev/zh/guide/i18n
-  locales: {
-    root: { label: '中文', ...zh },
-    en: { label: 'English', ...en },
-  },
-  // Vite config.
-  // https://vitejs.dev
-  vite: {
-    server: {
-      host: true,
-      port: 9865,
-    },
-    preview: {
-      host: true,
-      port: 9865,
-    },
-    plugins: [
-      groupIconVitePlugin() as any,
-    ],
-  },
+	...shared, // 扩展配置
+	locales: {
+		root: { label: '中文', ...zh },
+		en: { label: 'English', ...en },
+	},
+	vite: { // vite配置项，用于扩展vite插件等配置
+		server: {
+			host: true,
+			port: 9865,
+		},
+		preview: {
+			host: true,
+			port: 9865,
+		},
+		plugins: [
+			groupIconVitePlugin() as any,
+		],
+	},
 })
