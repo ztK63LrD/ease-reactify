@@ -40,7 +40,6 @@ export const shared = defineConfig({
       level: [2, 3], // 启用侧边目录
     },
   },
-
   markdown: { // 启用自定义 Markdown 插件
     // config: md => MarkdownPlugin(md),
       config(md) {
