@@ -27,6 +27,7 @@ export const shared = defineConfig({
     // ['meta', { property: 'og:site_name', content: 'Vue3 Component Library Starter Template' }],
     // ['meta', { property: 'og:image', content: '/logo-large.png' }],
     // ['meta', { property: 'og:url', content: WEBSITE_URL }],
+    
   ],
   themeConfig: {
     logo: '/logo-large.png', // 自定义头部标签
