@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
+      - name: 读取仓库内容
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # 获取完整历史，用于版本计算
@@ -20,29 +20,28 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 21
           registry-url: https://registry.npmjs.org/
           
-      - name: Setup pnpm
+      - name: 安装pnpm
         uses: pnpm/action-setup@v2
-        with:
-          version: 8
           
-      - name: Install dependencies
+      - name: 安装依赖
         run: pnpm install
+
+      - name: 项目测试
+        run: pnpm run test
+
+      - name: 构建项目
+        run: pnpm run build
         
-      - name: Update version
+      - name: 创建版本号
         run: npx changeset version --snapshot ${{ github.event.inputs.release-type }}
-        
-      - name: Commit changes
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add .
-          git commit -m "chore: release ${{ github.event.inputs.release-type }}"
-          git push
+      
+      - name: 登录到npm
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           
-      - name: Publish to npm
-        run: pnpm publish --recursive
+      - name: 发布到npm
+        run: npx changeset publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
