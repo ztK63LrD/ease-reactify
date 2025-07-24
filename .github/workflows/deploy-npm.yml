@@ -27,7 +27,7 @@ jobs:
         uses: pnpm/action-setup@v2
           
       - name: 安装依赖(跳过锁文件检查)
-        run: pnpm install --frozen-lockfile 
+        run: pnpm install --no-frozen-lockfile
 
       - name: 项目测试
         run: pnpm run test
