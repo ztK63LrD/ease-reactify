@@ -19,7 +19,7 @@ jobs:
         uses: pnpm/action-setup@v2  # 添加这一步安装pnpm
 
       - name: 安装依赖
-        run: pnpm install  # 运行pnpm install来安装依赖
+        run: pnpm install --frozen-lockfile   # 运行pnpm install来安装依赖
 
       - name: 项目测试
         run: pnpm run test  # 运行pnpm测试项目
