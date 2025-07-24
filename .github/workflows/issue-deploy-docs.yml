@@ -1,4 +1,4 @@
-name: 'Deploy Docs to GitHub Pages'  # 工作流名称
+name: 'Deploy Docs'  # 工作流名称
 
 on:
   push:
