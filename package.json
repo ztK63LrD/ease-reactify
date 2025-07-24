@@ -13,7 +13,7 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs --base=/ease-reactify/",
     "docs:preview": "vitepress preview docs",
-    "pub": "changeset"
+    "pub": "changeset && changeset version"
   },
   "packageManager": "pnpm@10.10.0",
   "workspaces": [
