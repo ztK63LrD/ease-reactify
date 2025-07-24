@@ -1,8 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/jsconfig",
   "name": "ease-reactify",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Personal UI design language and React component implementation",
+  "license": "MIT",
+  "author": "ztK63LrD",
   "main": "build/dist/index.js",
   "types": "build/es/index.d.ts",
   "exports": {
@@ -15,10 +17,14 @@
   "files": [
     "build"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "homepage": "https://ztk63lrd.github.io/ease-reactify/",
+  "bugs": {
+    "url": "https://github.com/ztK63LrD/ease-reactify/issues",
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "react",
+    "react-component",
+    "ui",
+    "ease-reactify"
+  ],
 }
