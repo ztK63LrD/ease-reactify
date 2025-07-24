@@ -1,0 +1,48 @@
+name: Release Package
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'packages/package.json'  # 如果是 monorepo，监听所有子包的 package.json
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整历史，用于版本计算
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Install dependencies
+        run: pnpm install
+        
+      - name: Update version
+        run: npx changeset version --snapshot ${{ github.event.inputs.release-type }}
+        
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "chore: release ${{ github.event.inputs.release-type }}"
+          git push
+          
+      - name: Publish to npm
+        run: pnpm publish --recursive
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

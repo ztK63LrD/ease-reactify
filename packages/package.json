@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/jsconfig",
   "name": "ease-reactify",
   "version": "0.0.1",
   "description": "Personal UI design language and React component implementation",

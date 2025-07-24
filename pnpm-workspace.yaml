@@ -1,4 +1,5 @@
 packages:
   - docs # 存放项目组件文档
   - "packages/**" # 存放项目组件UI代码
+  - "packages" # 存放项目组件文档
   - review # 存放项目组件实际测试效果代码
