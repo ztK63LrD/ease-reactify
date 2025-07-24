@@ -1,6 +1,6 @@
 {
   "name": "ease-reactify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Personal UI design language and React component implementation",
   "license": "MIT",
   "author": "ztK63LrD",
@@ -14,9 +14,7 @@
     }
   },
   "files": [
-    "dist",
-    "es",
-    "lib"
+    "build/**"
   ],
   "dependencies": {
     "clsx": "^2.1.1"

@@ -1,5 +1,11 @@
 # ease-reactify
 
+## 1.0.1
+
+### Patch Changes
+
+- 12
+
 ## 1.0.0
 
 ### Major Changes
