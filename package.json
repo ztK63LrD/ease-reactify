@@ -12,7 +12,7 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
+    "docs:build": "vitepress build docs --base=/ease-reactify",
     "docs:preview": "vitepress preview docs"
   },
   "packageManager": "pnpm@10.10.0",

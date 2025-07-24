@@ -12,14 +12,6 @@ export default defineConfig({
 	},
     outDir: 'dist/', // 打包输出目录
 	vite: { // vite配置项，用于扩展vite插件等配置
-		server: {
-			host: true,
-			port: 9865,
-		},
-		preview: {
-			host: true,
-			port: 9865,
-		},
 		plugins: [
 			groupIconVitePlugin() as any,
 		],
