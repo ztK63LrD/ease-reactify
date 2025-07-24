@@ -3,7 +3,7 @@ name: 'Deploy Docs'  # 工作流名称
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: 读取仓库内容
         uses: actions/checkout@v4  # 必须有uses来获取代码
+
+      - name: 安装pnpm
+        uses: pnpm/action-setup@v2  # 添加这一步安装pnpm
 
       - name: 安装依赖
         run: pnpm install  # 运行pnpm install来安装依赖
@@ -26,5 +29,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4  # 使用GitHub Actions来部署到gh-pages
         with:
           branch: gh-pages  # 指定部署的分支
-          folder: '/docs/dist'  # 指定构建后的文件夹路径
+          folder: 'docs/dist'  # 指定构建后的文件夹路径
           clean: true  # 清理旧的部署文件
