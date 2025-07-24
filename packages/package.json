@@ -1,6 +1,6 @@
 {
   "name": "ease-reactify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Personal UI design language and React component implementation",
   "license": "MIT",
   "author": "ztK63LrD",
@@ -16,6 +16,13 @@
   "files": [
     "build"
   ],
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ztK63LrD/ease-reactify"
+  },
   "homepage": "https://ztk63lrd.github.io/ease-reactify/",
   "bugs": {
     "url": "https://github.com/ztK63LrD/ease-reactify/issues"
@@ -23,6 +30,8 @@
   "keywords": [
     "react",
     "react-component",
+    "component",
+    "components",
     "ui",
     "ease-reactify"
   ]

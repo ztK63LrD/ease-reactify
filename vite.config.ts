@@ -50,7 +50,7 @@ export default defineConfig({
             cssFileName: 'style', // 样式文件名
         },
         rollupOptions: {
-            external: ['react', 'react-dom', 'react/jsx-runtime'],
+            external: ['react', 'react-dom', 'react/jsx-runtime', 'clsx'],
             output: [
                 {
                     // es 产物配置
@@ -92,7 +92,8 @@ export default defineConfig({
                     globals: {
                         'react': 'React',
                         'react-dom': 'ReactDOM',
-                        'react/jsx-runtime': 'jsxRuntime'
+                        'react/jsx-runtime': 'jsxRuntime',
+                        'clsx': 'clsx'
                     }
                 },
             ],
