@@ -15,6 +15,7 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
+  "packageManager": "pnpm@10.10.0",
   "peerDependencies": {
     "@ztk63lrd/components": "workspace:*",
     "@ztk63lrd/utils": "workspace:*",
