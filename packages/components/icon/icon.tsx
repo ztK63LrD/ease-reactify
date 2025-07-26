@@ -1,5 +1,5 @@
 import React from 'react'
-import { createNameSpace } from '@ztk63lrd/utils/create'
+import { createNameSpace } from '../utils/create'
 import type { IconProps } from './types'
 import { useStyle } from './styles'
 

@@ -17,6 +17,10 @@ docs/.vitepress/cache/*
 .changeset/*.md
 # .github/
 
+packages/dist
+packages/es
+packages/lib
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -27,3 +31,4 @@ docs/.vitepress/cache/*
 *.njsproj
 *.sln
 *.sw?
+tsconfig.tsbuildinfo

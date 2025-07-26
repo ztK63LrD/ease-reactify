@@ -4,17 +4,14 @@
   "description": "Personal UI design language and React component implementation",
   "license": "MIT",
   "author": "ztK63LrD",
-  "main": "build/dist/index.js",
-  "types": "build/es/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./build/es/index.d.ts",
-      "import": "./build/es/index.js",
-      "require": "./build/lib/index.js"
-    }
-  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "dist/antd.min.js",
+  "typings": "es/index.d.ts",
   "files": [
-    "build/**"
+    "dist",
+    "es",
+    "lib"
   ],
   "dependencies": {
     "clsx": "^2.1.1"

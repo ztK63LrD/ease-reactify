@@ -1,6 +1,6 @@
 import React, { forwardRef, useCallback } from 'react';
 import clsx from 'clsx';
-import { createNameSpace } from "@ztk63lrd/utils/create"
+import { createNameSpace } from "../utils/create"
 import type { ButtonProps } from './types';
 import "./styles/index.scss"
 

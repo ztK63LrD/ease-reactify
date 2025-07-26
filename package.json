@@ -19,7 +19,6 @@
   "packageManager": "pnpm@10.10.0",
   "workspaces": [
     "packages/components",
-    "packages/utils",
     "packages"
   ],
   "peerDependencies": {

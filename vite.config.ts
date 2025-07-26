@@ -19,18 +19,12 @@ export default defineConfig({
         },
     },
     plugins: [react(),
-    dts({
-        tsconfigPath: 'tsconfig.json', // 指向tsconfig.json文件
-        entryRoot: './packages/components', // 指向组件库源代码目录
-        outDir: ['./packages/build/es', './packages/build/lib'],  // 指向组件库声明文件输出目录
-        exclude: ['node_modules', 'docs', 'review', 'vite.config.ts'], // 排除的文件
-    }),
-    dts({
-        tsconfigPath: 'tsconfig.json',
-        entryRoot: './packages',
-        outDir: ['./packages/build/es', './packages/build/lib'],
-        exclude: ['node_modules', 'docs', 'review', 'vite.config.ts', './packages/components'],
-    }),
+        dts({
+            tsconfigPath: 'tsconfig.json', // 指向tsconfig.json文件
+            entryRoot: './packages/components', // 指向组件库源代码目录
+            outDir: ['./packages/es', './packages/lib'],  // 指向组件库声明文件输出目录
+            exclude: ['node_modules', 'docs', 'review', 'vite.config.ts'], // 排除的文件
+        }),
     ],
     resolve: {
         alias: {
@@ -44,10 +38,10 @@ export default defineConfig({
         cssCodeSplit: true, // 拆分样式
         copyPublicDir: false, // 关闭vite自带拷贝public目录到build的功能
         lib: {
-            entry: resolve(__dirname, 'packages/index.ts'), // 指向组件库核心代码入口文件
+            entry: resolve(__dirname, 'packages/components/index.ts'), // 指向组件库核心代码入口文件
             name: 'ease-reactify-ui',
             fileName: (format) => `ease-reactify.${format}.js`,
-            cssFileName: 'style', // 样式文件名
+            // cssFileName: 'index', // 样式文件名
         },
         rollupOptions: {
             external: ['react', 'react-dom', 'react/jsx-runtime', 'clsx'],
@@ -59,12 +53,20 @@ export default defineConfig({
                     exports: 'named', // 打包后的导出方式
                     preserveModules: true, // 保留模块结构
                     preserveModulesRoot: './packages/components', // 保留模块结构的根目录
-                    dir: 'packages/build/es', // 打包后的目录
-                    assetFileNames: (assetInfo) => { // 打包后的资源文件名
-                        if (assetInfo.names && assetInfo.names.some(name => name.endsWith('.css'))) {
-                            return path.join(path.dirname(assetInfo.names[0]), 'style.css')
+                    dir: 'packages/es', // 打包后的目录
+                    // assetFileNames: (assetInfo) => { // 打包后的资源文件名
+                    //     if (assetInfo.names && assetInfo.names.some(name => name.endsWith('.css'))) {
+                    //         return path.join(path.dirname(assetInfo.names[0]), 'index.css')
+                    //     }
+                    //     return '[name].[ext]'
+                    // },
+                    assetFileNames: (assetInfo) => {
+                        // 按组件目录生成 CSS
+                        if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+                            const componentDir = path.dirname(assetInfo.name);
+                            return `${componentDir}/index.css`;
                         }
-                        return '[name].[ext]'
+                        return '[name].[ext]';
                     },
                 },
                 {
@@ -74,10 +76,10 @@ export default defineConfig({
                     exports: 'named',
                     preserveModules: true,
                     preserveModulesRoot: 'packages/components',
-                    dir: 'packages/build/lib',
+                    dir: 'packages/lib',
                     assetFileNames: (assetInfo) => {
                         if (assetInfo.names && assetInfo.names.some(name => name.endsWith('.css'))) {
-                            return path.join(path.dirname(assetInfo.names[0]), 'style.css')
+                            return path.join(path.dirname(assetInfo.names[0]), 'index.css')
                         }
                         return '[name].[ext]'
                     },
@@ -87,7 +89,7 @@ export default defineConfig({
                     entryFileNames: 'index.js',
                     exports: 'named',
                     name: 'ease-reactify-ui',
-                    dir: 'packages/build/dist',
+                    dir: 'packages/dist',
                     sourcemap: true, // 只在 UMD 格式下生成 sourcemap
                     globals: {
                         'react': 'React',
@@ -99,7 +101,7 @@ export default defineConfig({
             ],
             plugins: [
                 clear({
-                    targets: ['./packages/build'], // 清除目录
+                    targets: ['./packages/lib', './packages/es', './packages/dist'], // 清除目录
                 }),
             ]
         }

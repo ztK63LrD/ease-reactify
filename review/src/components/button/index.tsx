@@ -1,5 +1,6 @@
-import EButton from "@ztk63lrd/components/button"
-// import { EButton } from "ease-reactify";
+// import EButton from "@ztk63lrd/components/button"
+import { EButton } from "ease-reactify";
+// import "ease-reactify/es/button"
 
 const ButtonView = () => {
   return (
