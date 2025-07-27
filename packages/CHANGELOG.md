@@ -1,5 +1,11 @@
 # ease-reactify
 
+## 1.0.2
+
+### Patch Changes
+
+- 修改结构
+
 ## 1.0.1
 
 ### Patch Changes
