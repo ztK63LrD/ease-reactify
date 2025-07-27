@@ -34,6 +34,9 @@ jobs:
 
       - name: 构建项目
         run: pnpm run build
+
+      - name: 检查待发布的包
+        run: npx changeset status
         
       - name: 创建版本号
         run: npx changeset version --snapshot ${{ github.event.inputs.release-type }}
