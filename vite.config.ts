@@ -13,7 +13,7 @@ export default defineConfig({
         globals: true, // 开启全局变量支持
         environment: 'jsdom', // 测试环境
         include: ["packages/components/**/__tests__/*"], // 测试文件
-        coverage: { 
+        coverage: {
             reporter: ['text', 'html'], // 设置覆盖率报告的格式
             include: ['packages/components/**/*.tsx'], // 包含的文件
         },
@@ -22,7 +22,7 @@ export default defineConfig({
         dts({
             tsconfigPath: 'tsconfig.json', // 指向tsconfig.json文件
             entryRoot: './packages/components', // 指向组件库源代码目录
-            outDir: ['./packages/es', './packages/lib'],  // 指向组件库声明文件输出目录
+            outDir: ['./packages/es', './packages/lib'], // 指向组件库声明文件输出目录
             exclude: ['node_modules', 'docs', 'review', 'vite.config.ts'], // 排除的文件
         }),
     ],
@@ -35,16 +35,18 @@ export default defineConfig({
     build: {
         emptyOutDir: true, // 构建前清空输出目录
         minify: true, // 压缩
-        cssCodeSplit: true, // 拆分样式
+        cssCodeSplit: false, // 关闭 CSS 代码分割，确保所有 CSS 合并
         copyPublicDir: false, // 关闭vite自带拷贝public目录到build的功能
         lib: {
             entry: resolve(__dirname, 'packages/components/index.ts'), // 指向组件库核心代码入口文件
             name: 'ease-reactify-ui',
             fileName: (format) => `ease-reactify.${format}.js`,
-            // cssFileName: 'index', // 样式文件名
         },
         rollupOptions: {
             external: ['react', 'react-dom', 'react/jsx-runtime', 'clsx'],
+            input: { // 入口文件配置
+                index: resolve(__dirname, 'packages/components/index.ts'),
+            },
             output: [
                 {
                     // es 产物配置
@@ -54,20 +56,7 @@ export default defineConfig({
                     preserveModules: true, // 保留模块结构
                     preserveModulesRoot: './packages/components', // 保留模块结构的根目录
                     dir: 'packages/es', // 打包后的目录
-                    // assetFileNames: (assetInfo) => { // 打包后的资源文件名
-                    //     if (assetInfo.names && assetInfo.names.some(name => name.endsWith('.css'))) {
-                    //         return path.join(path.dirname(assetInfo.names[0]), 'index.css')
-                    //     }
-                    //     return '[name].[ext]'
-                    // },
-                    assetFileNames: (assetInfo) => {
-                        // 按组件目录生成 CSS
-                        if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-                            const componentDir = path.dirname(assetInfo.name);
-                            return `${componentDir}/index.css`;
-                        }
-                        return '[name].[ext]';
-                    },
+                    // assetFileNames: 'index.css', // 所有样式合并为一个文件
                 },
                 {
                     // cjs 产物配置
@@ -96,7 +85,8 @@ export default defineConfig({
                         'react-dom': 'ReactDOM',
                         'react/jsx-runtime': 'jsxRuntime',
                         'clsx': 'clsx'
-                    }
+                    },
+                    assetFileNames: 'index.css', // 所有样式合并为一个文件
                 },
             ],
             plugins: [
