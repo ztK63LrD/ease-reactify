@@ -1,67 +1,7 @@
 # ease-reactify
 
-## 1.0.2
-
-### Patch Changes
-
-- 修改结构
-
-## 1.0.1
-
-### Patch Changes
-
-- 12
-
-## 1.0.0
-
-### Major Changes
-
-- y
-
-## 0.0.7
-
-### Patch Changes
-
-- 12
-
-## 0.0.6
-
-### Patch Changes
-
-- 12
-
-## 0.0.5
-
-### Patch Changes
-
-- 12
-
-## 0.0.4
-
-### Patch Changes
-
-- 发布
-
-## 0.0.3
-
-### Patch Changes
-
-- 发布
-
-## 0.0.2
-
-### Patch Changes
-
-- first send
-
 ## 0.0.1
 
 ### Patch Changes
 
-- first publish
-
-## 0.0.2
-
-### Patch Changes
-
-- test-publish
+- 初始化框架
