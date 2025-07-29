@@ -134,10 +134,9 @@ export const sidebarGuide: () => DefaultTheme.SidebarItem[] = () => {
 export const sidebarComponent: () => DefaultTheme.SidebarItem[] = () => {
   return [
     {
-      text: '基础组件',
-      collapsed: false,
+      text: '组件预览',
       items: [
-        { text: 'SayHello', link: '/zh/components/say-hello' },
+        { text: '组件预览', link: '/zh/components/say-hello' },
       ],
     },
   ]
