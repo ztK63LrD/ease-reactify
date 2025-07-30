@@ -1,3 +1,3 @@
-export const GITHUB_URL = 'https://github.com/starter-collective/starter-lib-vue3'
+export const GITHUB_URL = 'https://github.com/ztK63LrD/ease-reactify'
 
-export const WEBSITE_URL = 'https://starter-lib-vue3.netlify.app/'
+export const WEBSITE_URL = 'https://ztk63lrd.github.io/ease-reactify/'

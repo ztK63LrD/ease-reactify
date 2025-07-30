@@ -11,7 +11,7 @@ export const nav: () => DefaultTheme.NavItem[] = () => {
         },
         {
             text: '组件',
-            link: 'component/index',
+            link: 'component/overview',
             activeMatch: 'component/'
         },
         {
@@ -136,7 +136,14 @@ export const sidebarComponent: () => DefaultTheme.SidebarItem[] = () => {
     {
       text: '组件预览',
       items: [
-        { text: '组件预览', link: '/zh/components/say-hello' },
+        { text: '组件预览', link: 'overview' },
+      ],
+    },
+    {
+      text: '基础组件',
+      collapsed: false,
+      items: [
+        { text: 'Button 按钮', link: 'button' },
       ],
     },
   ]
