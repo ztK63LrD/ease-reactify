@@ -1,10 +1,10 @@
 # Ease-Reactify 是什么？ {#What is Ease React}
 
-ease-reactify 是一款基于 [React 19](https://react.dev/learn) 开发的高效 UI 组件库，旨在简化开发流程、提升开发者效率。通过精心设计的组件和灵活的配置，ease-reactify 为开发者提供了一套易用、可扩展的 UI 解决方案，帮助快速构建美观且功能丰富的应用界面。无论是从零开始构建项目还是对现有应用进行优化，ease-reactify 都能显著减少开发难度，提升开发速度。
+ease-reactify是一款基于 [React 19](https://react.dev/learn) 开发的高效 UI 组件库，旨在简化开发流程提升开发者效率。通过精心设计的组件和灵活的配置，ease-reactify为开发者提供了一套易用、可扩展的 UI 解决方案，帮助快速构建美观且功能丰富的应用界面。无论是从零开始构建项目还是对现有应用进行优化，ease-reactify都能显著减少开发难度提升开发速度。
 
 <div class="tip custom-block" style="padding-top: 8px">
 
-只是想尝试一下？跳到[快速上手](./quick-started)。
+想立即尝试一下？跳到[快速上手](./quick-started)。
 
 </div>
 

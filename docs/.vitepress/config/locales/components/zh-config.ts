@@ -92,7 +92,7 @@ export const sidebarGuide: () => DefaultTheme.SidebarItem[] = () => {
       items: [
         { text: '简介设计', link: 'introduce' },
         { text: '快速上手', link: 'quick-started' },
-        { text: '支持平台', link: 'getting-started' },
+        { text: '支持平台', link: 'platform' },
         { text: '更新日志', link: 'routing' },
       ]
     },

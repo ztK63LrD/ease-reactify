@@ -3,10 +3,11 @@
 
   ease-reactify（发音为 "ez reactify"） 是基于 Vite 框架驱动的React UI 框架。
 
-  你可以在 [简介设计](./introduce.md) 中了解有关该项目背后的基本原理的更多信息。
+  你可以在 [简介设计](./introduce.md) 中了解有关该项目背后的基本原理或更多信息。
 
 ## 使用包管理器
 我们建议采用 [npm](https://www.npmjs.com/)、[yarn](https://classic.yarnpkg.com/lang/en/)、[pnpm](https://pnpm.io/zh/) 或 [bun](https://bun.sh/) 作为开发工具。这些包管理工具能为开发环境提供便捷的调试体验，也能为生产环境提供稳定的打包部署能力，让您充分享受现代前端工具链和生态系统带来的优势。
+然后您就可以使用打包工具，例如 [Vite](https://vitejs.dev/) 或 [Webpack](https://webpack.js.org/)，来构建您的项目
 
 ::: code-group
 
@@ -23,6 +24,11 @@ $ yarn add ease-reactify
 $ bun add ease-reactify
 ```
 :::
+
+如果您的网络不佳，推荐使用 [cnpm](https://github.com/cnpm/cnpm) 或 [npmmirror](https://npmmirror.com/)
+```shell
+npm config set registry https://registry.npmmirror.com
+```
 
 ::: tip 注意
 
