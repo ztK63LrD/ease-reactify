@@ -16,7 +16,7 @@ export const nav: () => DefaultTheme.NavItem[] = () => {
         },
         {
             text: '工具',
-            link: 'tool/index',
+            link: 'tool/overview',
             activeMatch: 'tool/'
         },
         {
@@ -93,7 +93,7 @@ export const sidebarGuide: () => DefaultTheme.SidebarItem[] = () => {
         { text: '简介设计', link: 'introduce' },
         { text: '快速上手', link: 'quick-started' },
         { text: '支持平台', link: 'platform' },
-        { text: '更新日志', link: 'routing' },
+        { text: '更新日志', link: 'updatelog' },
       ]
     },
     {
@@ -153,10 +153,16 @@ export const sidebarComponent: () => DefaultTheme.SidebarItem[] = () => {
 export const sidebarTool: () => DefaultTheme.SidebarItem[] = () => {
   return [
     {
+      text: '工具预览',
+      items: [
+        { text: '工具预览', link: 'overview' },
+      ],
+    },
+    {
       text: '基础工具',
       collapsed: false,
       items: [
-        { text: 'SayHello', link: '/zh/tool/say-hello' },
+        { text: '脚手架', link: 'scaffold' },
       ],
     },
   ]

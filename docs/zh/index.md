@@ -7,9 +7,9 @@ hero:
   text: 高效React组件库
   tagline: 基于 React，面向设计师和开发者的组件库
   image:
-    src: /logo-large.png
+    src: /logo.png
     alt: Logo 图片
-    width: 200px
+    width: 250px
   actions:
     - theme: brand
       text: 快速开始

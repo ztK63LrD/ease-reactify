@@ -10,7 +10,7 @@
     --vp-c-brand-3: #fd7e14; /* 按钮颜色 */
     --vp-home-hero-name-color: transparent;
     --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #f9c68e 30%, #ff8441); /* 标题渐变色 */
-    --vp-home-hero-image-background-image: linear-gradient(-45deg, #f0ba3d 30%, #ffc05b); /* 背景渐变色 */
+    --vp-home-hero-image-background-image: linear-gradient(-45deg, #deb963 30%, #ffc05b); /* 背景渐变色 */
     --vp-home-hero-image-filter: blur(30px);
 }
 

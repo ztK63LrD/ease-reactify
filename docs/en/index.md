@@ -7,7 +7,7 @@ hero:
   text: Efficient React component library
   tagline: A component library based on React, targeted at designers and developers
   image:
-    src: /logo-large.png
+    src: /logo.png
     alt: Logo Image
     width: 200px
   actions:

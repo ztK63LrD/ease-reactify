@@ -16,19 +16,18 @@ export const shared = defineConfig({
     },
   },
   head: [ // 自定义头部标签
-    ['link', { rel: 'icon', href: '/logo.png' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/logo-large.png' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }], // 自定义头部标签
+    ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'theme-color', content: '#ced937ff' }], 
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:locale', content: 'en' }], // 自定义头部标签
-    // ['meta', { property: 'og:title', content: 'Vue3 Component Library Starter Template' }],
-    // ['meta', { property: 'og:site_name', content: 'Vue3 Component Library Starter Template' }],
-    // ['meta', { property: 'og:image', content: '/logo-large.png' }],
-    // ['meta', { property: 'og:url', content: WEBSITE_URL }],
-    
+    ['meta', { property: 'og:locale', content: 'zh' }], // 自定义头部标签
+    ['meta', { property: 'og:title', content: 'Vue3 Component Library Starter Template' }],
+    ['meta', { property: 'og:site_name', content: 'Vue3 Component Library Starter Template' }],
+    ['meta', { property: 'og:image', content: '/logo.png' }], // 自定义头部标签
+    ['meta', { property: 'og:url', content: WEBSITE_URL }],
   ],
   themeConfig: {
-    logo: '/logo-large.png', // 自定义头部标签
+    logo: '/favicon.ico', // 自定义头部标签
     socialLinks: [
       { icon: 'github', link: GITHUB_URL }, // 自定义头部标签
     ],
