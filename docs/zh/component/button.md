@@ -33,3 +33,9 @@ group:
 - 🔃 加载中：用于异步操作等待反馈的时候，也可以避免多次提交。
 
 ## 代码演示 {#examples}
+
+::: example
+
+button/basic
+
+:::

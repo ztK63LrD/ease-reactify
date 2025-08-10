@@ -24,7 +24,7 @@ interface ContainerOpts {
 export async function MarkdownPlugin(md: MarkdownIt): Promise<void> {
   const highlighter = await createHighlighter({
     themes: ['github-light', 'github-dark'],
-    langs: ['vue', 'vue-html', 'typescript', 'javascript'],
+    langs: ['tsx', 'html', 'typescript', 'javascript'],
   })
   md.use(tabsMarkdownPlugin) // 启用标签插件
   md.use(groupIconMdPlugin) // 启用分组图标插件
