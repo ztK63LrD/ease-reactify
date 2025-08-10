@@ -17,7 +17,6 @@ export const zh = defineConfig({
       '/component/': { base: '/component/', items: sidebarComponent() },
       '/tool/': { base: '/tool/', items: sidebarTool() },
     },
- 
     docFooter: { prev: '上一页', next: '下一页' }, // 文档页脚配置，自定义上一页和下一页的文本
     outline: { label: '页面导航' }, // 文档大纲配置，自定义标签文本
     lastUpdated: { text: '最后更新于' }, // 文档最后更新时间配置，自定义文本

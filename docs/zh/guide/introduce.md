@@ -50,7 +50,7 @@ export default App;
 ```
 ### 组件优势 {#component-advantages}
 
-`ease-reactify` 默认支持基于ES Modules的trer-shaking。
+`ease-reactify` 默认支持基于ES Modules的tree-shaking。
 
 `ease-reactify` 使用TypeScript编写，提供完整的类型定义，无需再引入额外的类型定义文件。
 
