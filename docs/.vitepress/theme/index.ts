@@ -1,6 +1,7 @@
 import theme from 'vitepress/theme'
-import './style.css'
 import 'virtual:group-icons.css'
+import "ease-reactify/dist/index.css"
+import './style.css'
 
 export default {
   ...theme

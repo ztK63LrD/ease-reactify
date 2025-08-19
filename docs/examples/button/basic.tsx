@@ -3,7 +3,7 @@ import { EButton } from 'ease-reactify'
 
 const Button = () => {
   return (
-    <EButton>base</EButton>
+    <EButton type='primary'>base</EButton>
   )
 }
 

@@ -34,8 +34,4 @@ group:
 
 ## 代码演示 {#examples}
 
-::: example
-
-button/basic
-
-:::
+<demo react="button/basic.tsx" />
