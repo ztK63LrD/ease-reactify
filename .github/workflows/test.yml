@@ -1,0 +1,41 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 读取仓库内容
+        uses: actions/checkout@v4
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21
+          
+      - name: 安装pnpm
+        uses: pnpm/action-setup@v2
+          
+      - name: 安装依赖
+        run: pnpm install --no-frozen-lockfile
+
+      - name: 运行测试
+        run: pnpm run test
+
+      - name: 构建项目
+        run: pnpm run build
+
+      - name: 构建文档
+        run: |
+          pnpm -C docs install --no-frozen-lockfile
+          pnpm run docs:build

@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'docs/**'  # 监听 docs 目录的变化
+      - 'packages/**'  # 监听 packages 目录的变化
 
 jobs:
   build-and-deploy:
@@ -18,18 +21,21 @@ jobs:
       - name: 安装pnpm
         uses: pnpm/action-setup@v2  # 添加这一步安装pnpm
 
-      - name: 安装依赖
+      - name: 安装根目录依赖
         run: pnpm install --no-frozen-lockfile   # 运行pnpm install来安装依赖
 
-      - name: 项目测试
-        run: pnpm run test  # 运行pnpm测试项目
+      - name: 安装文档依赖
+        run: pnpm -C docs install --no-frozen-lockfile   # 安装 docs 目录下的依赖
 
-      - name: 构建项目
+      - name: 构建组件库
+        run: pnpm run build  # 先构建组件库
+
+      - name: 构建文档
         run: pnpm run docs:build  # 运行构建文档的命令
 
       - name: 部署GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4  # 使用GitHub Actions来部署到gh-pages
         with:
           branch: gh-pages  # 指定部署的分支
-          folder: 'docs/dist'  # 指定构建后的文件夹路径
+          folder: 'docs/docs-dist'  # 指定构建后的文件夹路径（新的输出目录）
           clean: true  # 清理旧的部署文件
