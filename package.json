@@ -64,7 +64,7 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "sass": "^1.89.2",
-    "ease-reactify": "npm:ease-reactify@latest"
+    "ease-reactify": "npm:ease-reactify@latest",
+    "sass": "^1.89.2"
   }
 }

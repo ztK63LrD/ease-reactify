@@ -12,7 +12,7 @@ importers:
         specifier: workspace:*
         version: link:packages/components
       ease-reactify:
-        specifier: workspace:*
+        specifier: npm:ease-reactify@latest
         version: link:packages
       sass:
         specifier: ^1.89.2
