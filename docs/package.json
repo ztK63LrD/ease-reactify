@@ -9,15 +9,22 @@
     "preview": "vitepress preview ."
   },
   "dependencies": {
-    "ease-reactify": "npm:ease-reactify@latest",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "ease-reactify": "npm:ease-reactify@latest"
   },
   "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "vitepress": "^1.6.3",
     "vitepress-plugin-group-icons": "^1.6.1",
     "vitepress-plugin-tabs": "^0.7.1",
     "vitepress-demo-plugin": "^1.4.7",
-    "sass": "^1.89.2"
+    "sass": "^1.89.2",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
