@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - dev
     paths:
       - 'docs/**'  # 监听 docs 目录的变化
       - 'packages/**'  # 监听 packages 目录的变化
@@ -39,3 +40,4 @@ jobs:
           branch: gh-pages  # 指定部署的分支
           folder: 'docs/docs-dist'  # 指定构建后的文件夹路径（新的输出目录）
           clean: true  # 清理旧的部署文件
+          target-folder: ${{ github.ref_name == 'master' && '/' || '/dev' }}  # 根据分支设置部署路径

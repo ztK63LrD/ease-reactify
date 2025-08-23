@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - master
-      - develop
+      - dev
   pull_request:
     branches:
       - master
-      - develop
+      - dev
 
 jobs:
   test:
@@ -33,7 +33,12 @@ jobs:
         run: pnpm run test
 
       - name: 构建项目
-        run: pnpm run build
+        run: |
+          if [ "${{ github.ref_name }}" = "master" ]; then
+            pnpm run build:prod  # master 分支使用生产环境构建
+          else
+            pnpm run build  # dev 分支使用开发环境构建
+          fi
 
       - name: 构建文档
         run: |

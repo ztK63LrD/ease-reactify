@@ -3,6 +3,14 @@ name: Manual Release
 on:
   workflow_dispatch:
     inputs:
+      target-branch:
+        description: 'Target branch for release'
+        required: true
+        default: 'master'
+        type: choice
+        options:
+          - master
+          - dev
       release-type:
         description: 'Release type'
         required: true
@@ -26,6 +34,7 @@ jobs:
       - name: 读取仓库内容
         uses: actions/checkout@v4
         with:
+          ref: ${{ inputs.target-branch }}  # 切换到目标分支
           fetch-depth: 0  # 获取完整历史，用于版本计算
           
       - name: Setup Node.js
@@ -44,7 +53,12 @@ jobs:
         run: pnpm run test
 
       - name: 构建项目
-        run: pnpm run build:prod  # 使用生产环境构建
+        run: |
+          if [ "${{ inputs.target-branch }}" = "master" ]; then
+            pnpm run build:prod  # master 分支使用生产环境构建
+          else
+            pnpm run build  # dev 分支使用开发环境构建
+          fi
 
       - name: 检查待发布的包
         run: npx changeset status
@@ -54,7 +68,11 @@ jobs:
           if [ "${{ inputs.dry-run }}" = "true" ]; then
             echo "Dry run mode - skipping version bump"
           else
-            npx changeset version --snapshot ${{ inputs.release-type }}
+            if [ "${{ inputs.target-branch }}" = "master" ]; then
+              npx changeset version --snapshot ${{ inputs.release-type }}  # master 分支发布正式版本
+            else
+              npx changeset version --snapshot prerelease --preid dev  # dev 分支发布预发布版本
+            fi
           fi
       
       - name: 登录到npm
@@ -63,14 +81,19 @@ jobs:
           
       - name: 发布到npm
         if: inputs.dry-run != 'true'
-        run: npx changeset publish --only ease-reactify
+        run: |
+          if [ "${{ inputs.target-branch }}" = "master" ]; then
+            npx changeset publish --only ease-reactify  # master 分支发布正式版本
+          else
+            npx changeset publish --only ease-reactify --tag dev  # dev 分支发布预发布版本
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           
       - name: 完成提示
         run: |
           if [ "${{ inputs.dry-run }}" = "true" ]; then
-            echo "✅ Dry run completed successfully"
+            echo "✅ Dry run completed successfully for ${{ inputs.target-branch }} branch"
           else
-            echo "✅ Release completed successfully"
+            echo "✅ Release completed successfully for ${{ inputs.target-branch }} branch"
           fi
