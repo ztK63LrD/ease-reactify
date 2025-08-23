@@ -3,6 +3,7 @@ import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { shared } from './common/shared'
 import { zh } from './locales/zh'
 import { en } from './locales/en'
+import { resolve } from 'path'
 
 export default defineConfig({
 	...shared, // 扩展配置
@@ -15,5 +16,10 @@ export default defineConfig({
 		plugins: [
 			groupIconVitePlugin() as any,
 		],
+		resolve: {
+			alias: {
+				'ease-reactify': resolve(__dirname, '../../../packages')
+			}
+		}
 	},
 })
