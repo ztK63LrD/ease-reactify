@@ -9,7 +9,7 @@
     "preview": "vitepress preview ."
   },
   "dependencies": {
-    "ease-reactify": "npm:ease-reactify@latest"
+    "ease-reactify": "pnpm:ease-reactify@latest"
   },
   "devDependencies": {
     "vitepress": "^1.6.3",
