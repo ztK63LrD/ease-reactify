@@ -1,4 +1,5 @@
-import { expect, test, describe, it, vi } from "vitest";
+import React from "react";
+import { expect, describe, it, vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react"
 import EButton, { ButtonProps } from "../index";
 import '@testing-library/jest-dom'
