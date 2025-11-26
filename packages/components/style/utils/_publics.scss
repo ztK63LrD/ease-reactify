@@ -1,5 +1,7 @@
 // 设置样式混合
 @use './tools' as *;
+@use 'sass:map';
+@use 'sass:color';
 
 /* 生成CSS变量对应的值 */
 @mixin set-css-var-value($name, $value) {
@@ -37,5 +39,70 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* 按钮格式类型混合 */
+@mixin button-format-variant($format, $options: ()) {
+    @if $format == 'dashed' {
+        border-style: dashed;
+    }
+    @else if $format == 'text' {
+        $text-hover-bg: map.get($options, 'text-hover-bg') or #F5F5F5;
+        $text-active-bg: map.get($options, 'text-active-bg') or #D9D9D9;
+        $text-color: map.get($options, 'text-color') or #000;
+        $button-colors: map.get($options, 'button-colors') or ();
+        $namespace: map.get($options, 'namespace') or 'ease';
+        $modifier-separator: map.get($options, 'modifier-separator') or '--';
+        
+        background-color: transparent !important;
+        border-color: transparent !important;
+        color: $text-color;
+        
+        &:hover {
+            color: $text-color;
+            background-color: $text-hover-bg !important;
+        }
+        
+        &:active {
+            background-color: $text-active-bg !important;
+        }
+        
+        // 为不同类型的文本按钮设置悬停效果
+        @if length($button-colors) > 0 {
+            @each $type, $color in $button-colors {
+                &.#{$namespace}-button#{$modifier-separator}#{$type} {
+                    color: $color;
+                    &:hover {
+                        background-color: rgba($color, 0.1) !important;
+                    }
+                    &:active {
+                        background-color: rgba($color, 0.2) !important;
+                    }
+                }
+            }
+        }
+    }
+    @else if $format == 'link' {
+        $link-color: map.get($options, 'link-color') or #0d6efd;
+        $link-hover-color: map.get($options, 'link-hover-color') or color.adjust($link-color, $lightness: 15%);
+        $link-active-color: map.get($options, 'link-active-color') or $link-hover-color;
+        
+        background-color: transparent;
+        border-color: transparent;
+        color: $link-color;
+        text-decoration: none;
+        
+        &:hover {
+            color: $link-hover-color;
+            text-decoration: none;
+            border-color: transparent !important;
+        }
+        
+        &:active {
+            color: $link-active-color;
+            text-decoration: none;
+            border-color: transparent;
+        }
+    }
 }
 

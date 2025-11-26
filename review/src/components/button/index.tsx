@@ -19,6 +19,11 @@ const ButtonView = () => {
           <EButton format="text">文本按钮</EButton>
           <EButton format="link">链接按钮</EButton>
         </BaseContainer>
+        <BaseContainer title="反馈样式">
+          <EButton type="primary" feedback="ripple">波纹反馈</EButton>
+          <EButton type="primary" feedback="wavelet">波浪反馈</EButton>
+          <EButton type="primary" feedback="none">无反馈</EButton>
+        </BaseContainer>
         <BaseContainer title="尺寸样式">
             <EButton type="primary" size="large">大尺寸</EButton>
           <EButton size="middle">中尺寸</EButton>

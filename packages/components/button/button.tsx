@@ -1,12 +1,13 @@
 import React, { forwardRef, useCallback } from 'react';
 import clsx from 'clsx';
 import { createNameSpace } from "../utils/create"
+import Wave from '../utils/wave';
 import type { ButtonProps } from './types';
 import "./styles/index.scss"
 
 // 将一个 ref 转发到子组件的 DOM 元素或者子组件内部的某个元素
 const EButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-    const { type, format, shape, htmlType = 'button', size, plain, disabled, loading, color, children, className, ...rest } = props;
+    const { type, format, feedback, shape, htmlType = 'button', size, plain, disabled, loading, color, children, className, ...rest } = props;
     const bem = createNameSpace('button'); // 组件变量声明
 
     const classes = clsx( // 使用 clsx 动态构建类名
@@ -34,16 +35,18 @@ const EButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
         );
     }, [props.onClick, disabled]);
     return (
-        <button
-            className={classes} // 直接应用动态类名
-            type={htmlType}
-            disabled={disabled || loading}
-            onClick={handleClick}
-            ref={ref}
-            {...rest}
-        >
-            {children}
-        </button>
+        <Wave feedback={feedback}>
+            <button
+                className={classes} // 直接应用动态类名
+                type={htmlType}
+                disabled={disabled || loading}
+                onClick={handleClick}
+                ref={ref}
+                {...rest}
+            >
+                {children}
+            </button>
+        </Wave>
     );
 });
 

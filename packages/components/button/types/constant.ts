@@ -18,4 +18,8 @@ export type ButtonSize = (typeof _ButtonSizes)[number];
 // 定义包含四种按钮格式的元组
 const _ButtonFormats = ['default', 'dashed', 'text', 'link'] as const;
 export type ButtonFormat = (typeof _ButtonFormats)[number];
+
+// 定义包含三种按钮反馈的元组
+const _ButtonFeedbacks = ['ripple', 'wavelet', 'none'] as const;
+export type ButtonFeedback = (typeof _ButtonFeedbacks)[number];
 // #endregion

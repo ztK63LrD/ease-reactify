@@ -41,48 +41,24 @@
 
     // #region 处理不同格式类型
     @include m(dashed) {
-        border-style: dashed;
+        @include button-format-variant('dashed');
     }
     @include m(text) {
-        background-color: transparent !important;
-        border-color: transparent !important;
-        color: $black;
-        // 默认类型的文本按钮悬停效果
-        &:hover {
-            color: $black;
-            background-color: #F5F5F5 !important;
-        }
-        &:active {
-            background-color: #D9D9D9 !important;
-        }
-        // 为不同类型的文本按钮设置悬停效果，确保覆盖 type 类型的样式
-        @each $type, $color in $button-colors {
-            &.#{$namespace}-button#{$modifier-separator}#{$type} {
-                color: $color;
-                &:hover {
-                    background-color: rgba($color, 0.1) !important;
-                }
-                &:active {
-                    background-color: rgba($color, 0.2) !important;
-                }
-            }
-        }
+        @include button-format-variant('text', (
+            'text-hover-bg': #F5F5F5,
+            'text-active-bg': #D9D9D9,
+            'text-color': $black,
+            'button-colors': $button-colors,
+            'namespace': $namespace,
+            'modifier-separator': $modifier-separator
+        ));
     }
     @include m(link) {
-        background-color: transparent;
-        border-color: transparent;
-        color: $link-color;
-        text-decoration: none;
-        &:hover {
-            color: $link-hover-color;
-            text-decoration: none;
-            border-color: transparent !important;
-        }
-        &:active {
-            color: $link-active-color;
-            text-decoration: none;
-            border-color: transparent;
-        }
+        @include button-format-variant('link', (
+            'link-color': $link-color,
+            'link-hover-color': $link-hover-color,
+            'link-active-color': $link-active-color
+        ));
     }
     // #endregion
 
