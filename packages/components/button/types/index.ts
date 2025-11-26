@@ -1,6 +1,7 @@
 import React from 'react'
 import { ButtonHTMLType, ButtonSize, ButtonShape, ButtonType, ButtonFormat, ButtonFeedback } from './constant'
 
+// 基础按钮属性
 interface BaseButtonProps {
     type: ButtonType; // 按钮类型，默认为 'default'
     format: ButtonFormat; // 按钮格式，默认为 'default'
@@ -15,6 +16,16 @@ interface BaseButtonProps {
     children: React.ReactNode; // 按钮内容，默认为 null
 }
 
+// icon属性
+interface IconProps {
+    icon: React.ReactNode; // 图标，默认为 null
+    iconPlacement: 'left' | 'right'; // 图标位置，默认为 'left'
+    iconSize: number | string; // 图标大小，默认为 16
+    iconColor: string; // 图标颜色，默认为 '#000'
+    iconStyle: React.CSSProperties; // 图标样式，默认为 {}
+    iconClassName: string; // 图标类名，默认为 ''
+}
+
 // 合并HTMLAttributes和 ButtonHTMLAttributes的属性，但不包括type、color、disabled、children属性
 type MergedHTMLAttributes = Omit<
     React.HTMLAttributes<HTMLElement> &
@@ -23,7 +34,7 @@ type MergedHTMLAttributes = Omit<
     'type' | 'color' | 'disabled' | 'children'
 >;
 
-export interface inheritProps extends BaseButtonProps, MergedHTMLAttributes {
+export interface inheritProps extends BaseButtonProps, IconProps, MergedHTMLAttributes {
     href: string;
     autoInsertSpace: boolean;
 }

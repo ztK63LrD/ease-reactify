@@ -11,7 +11,11 @@
     outline: none;
     border: 1px solid;
     border-radius: $border-radius;
+    vertical-align: middle;
     cursor: pointer;
+    @include when(no-text) {
+        padding: 0px 8px;
+    }
     @include m(default) {
         @include color-bg-border-variant($black, $white, $border-color);
         &:hover {
@@ -117,6 +121,7 @@
             margin-left: 0.5rem;
         }
     }
+
     // #endregion
 
     // @include when(loading) {
