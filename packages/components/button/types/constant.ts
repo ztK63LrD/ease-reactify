@@ -14,4 +14,8 @@ export type ButtonHTMLType = (typeof _ButtonHTMLTypes)[number];
 // 定义包含三种按钮尺寸的元组
 const _ButtonSizes = ['large', 'middle', 'small'] as const;
 export type ButtonSize = (typeof _ButtonSizes)[number];
+
+// 定义包含四种按钮格式的元组
+const _ButtonFormats = ['default', 'dashed', 'text', 'link'] as const;
+export type ButtonFormat = (typeof _ButtonFormats)[number];
 // #endregion

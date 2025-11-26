@@ -22,6 +22,7 @@ $purple: #6f42c1 !default;
 $pink: #d63384 !default;
 $red: #dc3545 !default;
 $orange: #fd7e14 !default;
+$orange2: #c7610f !default;
 $yellow: #dec527 !default;
 $green: #52c41a !default;
 $teal: #20c997 !default;
@@ -86,6 +87,7 @@ $h6-font-size: $font-size-base !default;
 $link-color: $primary !default;
 $link-decoration: none !default;
 $link-hover-color: adjust($link-color, 15%) !default;
+$link-active-color: $orange2 !default;
 $link-hover-decoration: underline !default;
 
 // body

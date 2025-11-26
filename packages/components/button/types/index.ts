@@ -1,8 +1,9 @@
 import React from 'react'
-import { ButtonHTMLType, ButtonSize, ButtonShape, ButtonType } from './constant'
+import { ButtonHTMLType, ButtonSize, ButtonShape, ButtonType, ButtonFormat } from './constant'
 
 interface BaseButtonProps {
     type: ButtonType; // 按钮类型，默认为 'default'
+    format: ButtonFormat; // 按钮格式，默认为 'default'
     shape: ButtonShape; // 按钮形状，默认为 'default'
     htmlType: ButtonHTMLType; // 按钮的 HTML 类型，默认为 'button'
     size: ButtonSize; // 按钮尺寸，默认为 'middle'

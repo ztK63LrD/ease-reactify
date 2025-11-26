@@ -12,7 +12,6 @@
     border: 1px solid;
     border-radius: $border-radius;
     cursor: pointer;
-    // #region 处理不同type类型(使用映射简化样式应用)
     @include m(default) {
         @include color-bg-border-variant($black, $white, $border-color);
         &:hover {
@@ -23,6 +22,7 @@
             background-color: transparent;
         }
     }
+    // #region 处理不同type类型(使用映射简化样式应用)
     @each $type, $color in $button-colors {
         @include m(#{$type}) {
             background-color: $color;
@@ -35,6 +35,53 @@
             &:active {
                 background-color: $color;
             }
+        }
+    }
+    // #endregion
+
+    // #region 处理不同格式类型
+    @include m(dashed) {
+        border-style: dashed;
+    }
+    @include m(text) {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        color: $black;
+        // 默认类型的文本按钮悬停效果
+        &:hover {
+            color: $black;
+            background-color: #F5F5F5 !important;
+        }
+        &:active {
+            background-color: #D9D9D9 !important;
+        }
+        // 为不同类型的文本按钮设置悬停效果，确保覆盖 type 类型的样式
+        @each $type, $color in $button-colors {
+            &.#{$namespace}-button#{$modifier-separator}#{$type} {
+                color: $color;
+                &:hover {
+                    background-color: rgba($color, 0.1) !important;
+                }
+                &:active {
+                    background-color: rgba($color, 0.2) !important;
+                }
+            }
+        }
+    }
+    @include m(link) {
+        background-color: transparent;
+        border-color: transparent;
+        color: $link-color;
+        text-decoration: none;
+        &:hover {
+            color: $link-hover-color;
+            text-decoration: none;
+            border-color: transparent !important;
+        }
+        &:active {
+            color: $link-active-color;
+            text-decoration: none;
+            border-color: transparent;
         }
     }
     // #endregion

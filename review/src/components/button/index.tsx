@@ -1,38 +1,41 @@
-// import EButton from "@ztk63lrd/components/button"
-import { EButton } from "ease-reactify";
+import EButton from "@ztk63lrd/components/button"
+import BaseContainer from "../../common/base-container";
+// import { EButton } from "ease-reactify";
 
 const ButtonView = () => {
   return (
     <div>
-        <h2>基本样式</h2>
-        <div style={{ border: '1px solid #ccc', padding: '20px', marginBottom: '10px' }}>
-          <EButton>按钮</EButton>
-          <EButton type="primary">按钮</EButton>
-          <EButton type="success">按钮</EButton>
-          <EButton type="info">按钮</EButton>
-          <EButton type="warning">按钮</EButton>
-          <EButton type="danger">按钮</EButton>
-        </div>
-        <h2>尺寸样式</h2>
-        <div style={{ border: '1px solid #ccc', padding: '20px', marginBottom: '10px' }}>
-          <EButton type="primary" size="large">按钮</EButton>
-          <EButton size="middle">按钮</EButton>
-          <EButton size="small">按钮</EButton>
-        </div>
-        <h2>性状样式</h2>
-        <div style={{ border: '1px solid #ccc', padding: '20px', marginBottom: '10px' }}>
+        <BaseContainer title="基本样式">
+          <EButton>默认按钮</EButton>
+          <EButton type="primary">主要按钮</EButton>
+          <EButton type="success">成功按钮</EButton>
+          <EButton type="info">信息按钮</EButton>
+          <EButton type="warning">警告按钮</EButton>
+          <EButton type="danger">危险按钮</EButton>
+        </BaseContainer>
+        <BaseContainer title="格式样式">
+          <EButton format="default">默认按钮</EButton>
+          <EButton format="dashed">虚线按钮</EButton>
+          <EButton format="text">文本按钮</EButton>
+          <EButton format="link">链接按钮</EButton>
+        </BaseContainer>
+        <BaseContainer title="尺寸样式">
+            <EButton type="primary" size="large">大尺寸</EButton>
+          <EButton size="middle">中尺寸</EButton>
+          <EButton size="small">小尺寸</EButton>
+        </BaseContainer>
+        <BaseContainer title="性状样式">
           <EButton type="primary" shape="circle">circle按钮</EButton>
           <EButton type="primary" shape="round">round按钮</EButton>
-        </div>
-        <h2>状态样式</h2>
-        <div style={{ border: '1px solid #ccc', padding: '20px', marginBottom: '10px' }}>
+        </BaseContainer>
+        <BaseContainer title="状态样式">
           <EButton plain>按钮</EButton>
           <EButton type="primary" plain>按钮</EButton>
           <EButton type="success" plain>按钮</EButton>
           <EButton type="info" plain>按钮</EButton>
           <EButton type="warning" plain>按钮</EButton>
           <EButton type="danger" plain className="test">按钮</EButton>
-        </div>
+        </BaseContainer>
     </div>
   )
 }
