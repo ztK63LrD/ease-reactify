@@ -37,13 +37,14 @@ export default defineConfig({
         minify: true, // 压缩
         cssCodeSplit: false, // 关闭 CSS 代码分割，确保所有 CSS 合并
         copyPublicDir: false, // 关闭vite自带拷贝public目录到build的功能
+        sourcemap: false, // 统一使用 build.sourcemap，不使用 rollupOptions.output.sourcemap
         lib: {
             entry: resolve(__dirname, 'packages/components/index.ts'), // 指向组件库核心代码入口文件
             name: 'ease-reactify-ui',
             fileName: (format) => `ease-reactify.${format}.js`,
         },
         rollupOptions: {
-            external: ['react', 'react-dom', 'react/jsx-runtime', 'clsx'],
+            external: ['react', 'react-dom', 'react-dom/client', 'react/jsx-runtime', 'clsx'],
             input: { // 入口文件配置
                 index: resolve(__dirname, 'packages/components/index.ts'),
             },
@@ -83,6 +84,7 @@ export default defineConfig({
                     globals: {
                         'react': 'React',
                         'react-dom': 'ReactDOM',
+                        'react-dom/client': 'ReactDOMClient',
                         'react/jsx-runtime': 'jsxRuntime',
                         'clsx': 'clsx'
                     },

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
  
 interface WaveProps {
     children: React.ReactNode;
@@ -166,7 +166,7 @@ const Wave: React.FC<WaveProps> = (props) => {
                 });
                 
                 node.insertBefore(warpper, node.firstChild);
-                const root = ReactDOM.createRoot(warpper);
+                const root = createRoot(warpper);
                 root.render(<WaveEffect target={node} />);
             }
         };

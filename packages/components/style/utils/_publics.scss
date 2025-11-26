@@ -2,6 +2,7 @@
 @use './tools' as *;
 @use 'sass:map';
 @use 'sass:color';
+@use 'sass:list';
 
 /* 生成CSS变量对应的值 */
 @mixin set-css-var-value($name, $value) {
@@ -68,7 +69,7 @@
         }
         
         // 为不同类型的文本按钮设置悬停效果
-        @if length($button-colors) > 0 {
+        @if list.length($button-colors) > 0 {
             @each $type, $color in $button-colors {
                 &.#{$namespace}-button#{$modifier-separator}#{$type} {
                     color: $color;
