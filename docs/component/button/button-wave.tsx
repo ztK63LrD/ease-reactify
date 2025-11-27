@@ -3,7 +3,7 @@ import { EButton } from 'ease-reactify'
 
 const Button = () => {
   return (
-    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+    <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
         <EButton feedback="ripple">波纹反馈</EButton>
         <EButton type="primary" feedback="wavelet">波浪反馈</EButton>
         <EButton type="warning" feedback="none">无反馈</EButton>

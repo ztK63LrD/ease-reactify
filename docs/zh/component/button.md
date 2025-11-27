@@ -1,6 +1,6 @@
 ---
 category: Components
-title: Button
+title: Button按钮
 subtitle: 按钮
 description: 按钮用于开始一个即时操作。
 outline: deep
