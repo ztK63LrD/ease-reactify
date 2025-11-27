@@ -20,6 +20,15 @@ const ButtonView = () => {
           <EButton format="text">文本按钮</EButton>
           <EButton format="link">链接按钮</EButton>
         </BaseContainer>
+        <BaseContainer title="链接样式">
+          <EButton format="link">文本按钮</EButton>
+          <EButton type="primary" format="link">文本按钮</EButton>
+          <EButton type="success" format="link">文本按钮</EButton>
+          <EButton type="info" format="link">文本按钮</EButton>
+          <EButton type="warning" format="link">文本按钮</EButton>
+          <EButton type="danger" format="link">文本按钮</EButton>
+          <EButton type="danger" format="link" disabled>文本按钮</EButton>
+        </BaseContainer>
         <BaseContainer title="图标样式">
           <EButton type="primary" icon={<SearchOutlined />}>搜索</EButton>
           <EButton type="primary" icon={<SearchOutlined />} iconPlacement="right">搜索</EButton>

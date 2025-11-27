@@ -19,6 +19,8 @@ const Button = () => {
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
             <EButton format="link">link</EButton>
             <EButton format="link" disabled>link(disabled)</EButton>
+            <EButton type='primary' format="link">link</EButton>
+            <EButton type='primary' format="link" disabled>primary link(disabled)</EButton>
         </div>
     </div>
   )

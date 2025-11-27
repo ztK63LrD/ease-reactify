@@ -13,6 +13,14 @@ const Button = () => {
             <EButton type="danger">危险按钮</EButton>
         </div>
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            <EButton format="link">文本按钮</EButton>
+            <EButton type="primary" format="link">文本按钮</EButton>
+            <EButton type="success" format="link">文本按钮</EButton>
+            <EButton type="info" format="link">文本按钮</EButton>
+            <EButton type="warning" format="link">文本按钮</EButton>
+            <EButton type="danger" format="link">文本按钮</EButton>
+        </div>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
             <EButton plain>按钮</EButton>
             <EButton type="primary" plain>按钮</EButton>
             <EButton type="success" plain>按钮</EButton>
@@ -24,7 +32,7 @@ const Button = () => {
             <EButton format="default">默认按钮</EButton>
             <EButton format="dashed">虚线按钮</EButton>
             <EButton format="text">文本按钮</EButton>
-            <EButton format="link">链接按钮</EButton>
+            <EButton type="primary" format="link">链接按钮</EButton>
         </div>
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
             <EButton type="primary" shape="circle">circle按钮</EButton>

@@ -2,6 +2,7 @@
 @use '../../style/common/var' as *;
 @use './variable.scss' as *;
 @use 'sass:map';
+@use 'sass:color';
 
 @include b(button) {
     @include inline-flex;
@@ -63,12 +64,47 @@
     }
     @include m(link) {
         @include button-format-variant('link', (
-            'link-color': $link-color,
-            'link-hover-color': $link-hover-color,
-            'link-active-color': $link-active-color
+            'link-color': $gray-700,
+            'link-hover-color': $gray-800,
+            'link-active-color': $gray-900
         ));
-        // 处理禁用状态下的链接按钮样式（纯文本禁用，无背景无边框，与 text 格式一致）
+        // 处理不同类型的链接按钮样式（当同时设置了 type 和 format="link" 时）
+        @each $type, $color in $button-colors {
+            &.ease-button--#{$type} {
+                // 背景色透明，字体颜色使用 type 对应的颜色（覆盖 button-format-variant 中的 link 样式）
+                background-color: transparent !important;
+                color: $color !important;
+                &:hover {
+                    // 悬浮时颜色稍微亮一点
+                    color: color.adjust($color, $lightness: 10%) !important;
+                }
+                &:active {
+                    // 激活时颜色深一点
+                    color: color.adjust($color, $lightness: -10%) !important;
+                }
+            }
+        }
+        // 处理禁用状态下的链接按钮样式
         &.is-disabled {
+            // 当同时有 type 和 disabled 时，添加透明度并取消激活颜色的改变
+            @each $type, $color in $button-colors {
+                &.ease-button--#{$type} {
+                    // 背景色透明
+                    background-color: transparent !important;
+                    // 添加透明度
+                    opacity: 0.5;
+                    // 保持 type 对应的颜色，但取消激活状态的颜色改变
+                    color: $color !important;
+                    &:hover {
+                        color: $color !important;
+                    }
+                    &:active {
+                        // 取消激活颜色的改变，保持禁用时的颜色
+                        color: $color !important;
+                    }
+                }
+            }
+            // 没有 type 时的默认禁用样式（纯文本禁用，无背景无边框）
             @include text-format-disabled;
         }
     }
@@ -138,6 +174,25 @@
     }
     @include m(link) {
         &.is-disabled {
+            // 当同时有 type 和 disabled 时，添加透明度并取消激活颜色的改变
+            @each $type, $color in $button-colors {
+                &.ease-button--#{$type} {
+                    // 背景色透明
+                    background-color: transparent !important;
+                    // 添加透明度
+                    opacity: 0.5;
+                    // 保持 type 对应的颜色，但取消激活状态的颜色改变
+                    color: $color !important;
+                    &:hover {
+                        color: $color !important;
+                    }
+                    &:active {
+                        // 取消激活颜色的改变，保持禁用时的颜色
+                        color: $color !important;
+                    }
+                }
+            }
+            // 没有 type 时的默认禁用样式（纯文本禁用，无背景无边框）
             @include text-format-disabled;
         }
     }
