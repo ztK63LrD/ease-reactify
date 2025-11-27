@@ -43,5 +43,9 @@ group:
 <demo react="button/button-size.tsx" />
 
 ### 按钮禁用 {#button-disabled}
-使用图标为按钮添加更多的含义，可以使用不同图标定义参数来控制按钮显示。
+添加 `disabled` 属性即可让按钮处于不可用状态，同时按钮样式也会改变。
 <demo react="button/button-disabled.tsx" />
+
+### 按钮反馈 {#button-wave}
+添加 `feedback` 属性即可改变按钮的反馈效果。
+<demo react="button/button-wave.tsx" />
