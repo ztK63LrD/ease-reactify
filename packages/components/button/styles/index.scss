@@ -73,6 +73,10 @@
             // 获取当前类型对应的高度
             $size-height: map.get($button-height, $type);
             height: $size-height;
+            // 确保 size 的 padding 优先级高于 no-text
+            @include when(no-text) {
+                padding: $size;
+            }
         }
     }
     // #endregion

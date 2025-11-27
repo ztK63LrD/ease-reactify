@@ -38,6 +38,9 @@ const ButtonView = () => {
           <EButton type="primary" size="large">大尺寸</EButton>
           <EButton size="middle">中尺寸</EButton>
           <EButton size="small">小尺寸</EButton>
+          <EButton type="primary" size="large" icon={<SearchOutlined />} shape='circle'></EButton>
+          <EButton size="middle" icon={<SearchOutlined />} shape='circle'></EButton>
+          <EButton size="small" icon={<SearchOutlined />} shape='circle'></EButton>
         </BaseContainer>
         <BaseContainer title="性状样式">
           <EButton type="primary" shape="circle">circle按钮</EButton>
