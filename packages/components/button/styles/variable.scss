@@ -25,8 +25,14 @@ $button-plain: (
     danger: $danger-plain
 );
 
-/* size尺寸 */
+/* size尺寸 - 有文字时的内边距 */
 $button-size: (
+    large: 0px 20px,
+    middle: 0px 15px,
+    small: 0px 7px,
+);
+/* size尺寸 - 没文字时的内边距 */
+$button-size-no-text: (
     large: 0px 12px,
     middle: 0px 8px,
     small: 0px 3px,

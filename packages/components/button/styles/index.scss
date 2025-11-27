@@ -69,13 +69,15 @@
     // #region 处理不同size类型
     @each $type, $size in $button-size {
         @include m(#{$type}) {
+            // 有文字时的内边距
             padding: $size;
             // 获取当前类型对应的高度
             $size-height: map.get($button-height, $type);
             height: $size-height;
-            // 确保 size 的 padding 优先级高于 no-text
+            // 没文字时的内边距（使用不同的映射）
             @include when(no-text) {
-                padding: $size;
+                $no-text-size: map.get($button-size-no-text, $type);
+                padding: $no-text-size;
             }
         }
     }
