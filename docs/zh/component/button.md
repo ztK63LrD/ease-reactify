@@ -35,11 +35,11 @@ group:
 <demo react="button/button-basic.tsx" />
 
 ### 按钮图标 {#button-icon}
-使用图标为按钮添加更多的含义，可以使用不同图标定义参数来控制按钮显示。
+使用 `icon` 为按钮添加图标设置更多的含义，可以使用不同图标定义参数来控制按钮显示。
 <demo react="button/button-icon.tsx" />
 
 ### 按钮尺寸 {#button-size}
-使用图标为按钮添加更多的含义，可以使用不同图标定义参数来控制按钮显示。
+使用 `size` 为按钮添加不同的尺寸去选择，以便适配不同的场景。
 <demo react="button/button-size.tsx" />
 
 ### 按钮禁用 {#button-disabled}
@@ -49,3 +49,7 @@ group:
 ### 按钮反馈 {#button-wave}
 添加 `feedback` 属性即可改变按钮的反馈效果。
 <demo react="button/button-wave.tsx" />
+
+### 按钮宽度 {#button-block}
+添加 `block` 属性即可改变按钮的宽度，自适应父级宽度。
+<demo react="button/button-block.tsx" />

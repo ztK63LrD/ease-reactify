@@ -65,6 +65,14 @@ const ButtonView = () => {
           <EButton type="danger" disabled>禁用按钮</EButton>
           <EButton format="link" disabled>link(disabled)</EButton>
         </BaseContainer>
+        <BaseContainer title="block样式">
+          <EButton block>default</EButton>
+          <EButton type="primary" block>primary</EButton>
+          <EButton format="dashed" block>dashed</EButton>
+          <EButton block disabled>dashed</EButton>
+          <EButton format="text" block>text</EButton>
+          <EButton format="link" block>link</EButton>
+        </BaseContainer>
     </div>
   )
 }

@@ -143,6 +143,12 @@
     }
     // #endregion
 
+    // #region 处理block状态样式
+    @include when(block) {
+        width: 100%;
+    }
+
+    // #endregion
 
     @include when(loading) {
         position: relative;
@@ -159,8 +165,6 @@
             margin-left: 0.5rem;
         }
     }
-
-    // #endregion
 
     // @include when(loading) {
     //     @include button-variant($color-black, $color-grey, $color-grey);

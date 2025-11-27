@@ -12,6 +12,7 @@ interface BaseButtonProps {
     plain: boolean; // 是否为朴素按钮，默认为 false
     disabled: boolean; // 是否禁用状态，默认为 false
     loading: boolean; // 是否为加载中状态，默认为 false
+    block: boolean; // 是否为自定义宽度，默认为false
     color: string; // 按钮颜色
     children: React.ReactNode; // 按钮内容，默认为 null
 }

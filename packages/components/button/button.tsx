@@ -8,7 +8,7 @@ import "./styles/index.scss"
 // 将一个 ref 转发到子组件的 DOM 元素或者子组件内部的某个元素
 const EButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     const { type, format, feedback, shape, htmlType = 'button', size, plain, disabled, 
-        loading, color, children, icon, iconPlacement = 'left', iconSize = 16, iconColor, 
+        loading, block, color, children, icon, iconPlacement = 'left', iconSize = 16, iconColor, 
         iconStyle, iconClassName, className, ...rest 
     } = props;
     const bem = createNameSpace('button'); // 组件变量声明
@@ -23,6 +23,7 @@ const EButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
         bem.is('plain', plain), // plain 朴素状态
         bem.is('disabled', disabled), // disabled 状态
         bem.is('loading', loading), // loading 状态
+        bem.is('block', block), // block 状态
         bem.is('no-text', !hasText), // 无文字状态
         className, // 用户自定义类名
     );

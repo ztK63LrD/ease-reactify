@@ -5,9 +5,9 @@ interface Props {
 
 const BaseContainer = (props: Props) => {
     return (
-        <div>
+        <div style={{ width: '100%' }}>
             <h2>{props.title}</h2>
-            <div style={{ border: '1px solid #ccc', padding: '20px', marginBottom: '10px' }}>
+            <div style={{ border: '1px solid #ccc', padding: '20px', marginBottom: '10px', width: '100%', boxSizing: 'border-box' }}>
                 {props.children}
             </div>
         </div>
