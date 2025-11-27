@@ -1,6 +1,6 @@
 import "./chunk-DC5AMYBS.js";
 
-// ../node_modules/.pnpm/@vue+devtools-shared@7.7.6/node_modules/@vue/devtools-shared/dist/index.js
+// ../node_modules/.pnpm/@vue+devtools-shared@7.7.9/node_modules/@vue/devtools-shared/dist/index.js
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -522,11 +522,11 @@ function createHooks() {
   return new Hookable();
 }
 
-// ../node_modules/.pnpm/birpc@2.3.0/node_modules/birpc/dist/index.mjs
+// ../node_modules/.pnpm/birpc@2.8.0/node_modules/birpc/dist/index.mjs
 var { clearTimeout: clearTimeout2, setTimeout: setTimeout2 } = globalThis;
 var random = Math.random.bind(Math);
 
-// ../node_modules/.pnpm/@vue+devtools-kit@7.7.6/node_modules/@vue/devtools-kit/dist/index.js
+// ../node_modules/.pnpm/@vue+devtools-kit@7.7.9/node_modules/@vue/devtools-kit/dist/index.js
 var __create2 = Object.create;
 var __defProp2 = Object.defineProperty;
 var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -2658,7 +2658,7 @@ init_esm_shims2();
 init_esm_shims2();
 var TIMELINE_LAYERS_STATE_STORAGE_ID = "__VUE_DEVTOOLS_KIT_TIMELINE_LAYERS_STATE__";
 function getTimelineLayersStateFromStorage() {
-  if (!isBrowser || typeof localStorage === "undefined" || localStorage === null) {
+  if (typeof window === "undefined" || !isBrowser || typeof localStorage === "undefined" || localStorage === null) {
     return {
       recordingState: false,
       mouseEventEnabled: false,
@@ -2668,7 +2668,7 @@ function getTimelineLayersStateFromStorage() {
       selected: ""
     };
   }
-  const state = localStorage.getItem(TIMELINE_LAYERS_STATE_STORAGE_ID);
+  const state = typeof localStorage.getItem !== "undefined" ? localStorage.getItem(TIMELINE_LAYERS_STATE_STORAGE_ID) : null;
   return state ? JSON.parse(state) : {
     recordingState: false,
     mouseEventEnabled: false,
@@ -3634,6 +3634,7 @@ var appRecordInfo = (_b17 = (_a17 = target).__VUE_DEVTOOLS_NEXT_APP_RECORD_INFO_
   id: 0,
   appIds: /* @__PURE__ */ new Set()
 };
+init_esm_shims2();
 function onDevToolsClientConnected(fn) {
   return new Promise((resolve) => {
     if (devtoolsState.connected && devtoolsState.clientConnected) {

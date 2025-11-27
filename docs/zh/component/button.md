@@ -3,8 +3,9 @@ category: Components
 title: Button
 subtitle: 按钮
 description: 按钮用于开始一个即时操作。
+outline: deep
 demo:
-  cols: 2
+  cols: 3
 group:
   title: 通用
   order: 1
@@ -29,6 +30,10 @@ group:
 - 🚫 禁用：行动点不可用的时候，一般需要文案解释。
 - 🔃 加载中：用于异步操作等待反馈的时候，也可以避免多次提交。
 
-## 基本样式 {#examples}
-使用 `type`、`format`、`shape`、`plain`
-<demo react="button/basic.tsx" />
+### 基本用法 {#button-basic}
+使用 `type`、`format`、`shape`、`plain` 来定义按钮的样式。
+<demo react="button/button-basic.tsx" />
+
+### 按钮图标 {#button-icon}
+使用图标为按钮添加更多的含义，可以使用不同图标定义参数来控制按钮显示。
+<demo react="button/button-icon.tsx" />
