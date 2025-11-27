@@ -56,6 +56,10 @@
             'namespace': $namespace,
             'modifier-separator': $modifier-separator
         ));
+        // 处理禁用状态下的文本按钮样式（纯文本禁用，无背景无边框）
+        &.is-disabled {
+            @include text-format-disabled;
+        }
     }
     @include m(link) {
         @include button-format-variant('link', (
@@ -63,6 +67,10 @@
             'link-hover-color': $link-hover-color,
             'link-active-color': $link-active-color
         ));
+        // 处理禁用状态下的链接按钮样式（纯文本禁用，无背景无边框，与 text 格式一致）
+        &.is-disabled {
+            @include text-format-disabled;
+        }
     }
     // #endregion
 
@@ -108,10 +116,34 @@
             }
         }
     }
+
+    // #region 处理静态状态样式
     @include when(disabled) {
         cursor: not-allowed;
-        opacity: 0.5;
+        color: $disabled-color;
+        border-color: $disabled-border;
+        background-color: $disabled-bg;
+        &:active {
+            background-color: $disabled-bg !important;
+        }
+        &:hover {
+            background-color: $disabled-bg !important;
+        }
     }
+    // 在通用 disabled 样式之后，再次确保 text 和 link 格式的禁用样式优先级最高（纯文本禁用）
+    @include m(text) {
+        &.is-disabled {
+            @include text-format-disabled;
+        }
+    }
+    @include m(link) {
+        &.is-disabled {
+            @include text-format-disabled;
+        }
+    }
+    // #endregion
+
+
     @include when(loading) {
         position: relative;
         pointer-events: none;

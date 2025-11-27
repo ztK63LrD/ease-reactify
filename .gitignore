@@ -33,3 +33,4 @@ packages/lib
 *.sln
 *.sw?
 tsconfig.tsbuildinfo
+*.tsbuildinfo

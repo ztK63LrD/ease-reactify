@@ -41,3 +41,7 @@ group:
 ### 按钮尺寸 {#button-size}
 使用图标为按钮添加更多的含义，可以使用不同图标定义参数来控制按钮显示。
 <demo react="button/button-size.tsx" />
+
+### 按钮禁用 {#button-disabled}
+使用图标为按钮添加更多的含义，可以使用不同图标定义参数来控制按钮显示。
+<demo react="button/button-disabled.tsx" />

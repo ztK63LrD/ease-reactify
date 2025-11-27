@@ -1,4 +1,5 @@
 @use '../../style/common/var' as *;
+@use 'sass:map';
 
 /* type类型 */
 $button-colors: (
@@ -49,4 +50,31 @@ $button-shape: (
     default: $border-radius,
     round: $border-radius-sm,
     circle: $border-radius-lg,
-)
+);
+
+/* 纯文本格式禁用样式 mixin（用于 text 和 link 格式） */
+@mixin text-format-disabled {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    &:hover {
+        background-color: transparent !important;
+        border-color: transparent !important;
+    }
+    &:active {
+        background-color: transparent !important;
+        border-color: transparent !important;
+    }
+    // 覆盖不同类型的按钮的悬停效果
+    @each $type, $color in $button-colors {
+        &.ease-button--#{$type} {
+            &:hover {
+                background-color: transparent !important;
+                border-color: transparent !important;
+            }
+            &:active {
+                background-color: transparent !important;
+                border-color: transparent !important;
+            }
+        }
+    }
+}

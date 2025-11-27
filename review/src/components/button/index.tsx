@@ -5,7 +5,7 @@ import { SearchOutlined } from '@ant-design/icons';
 
 const ButtonView = () => {
   return (
-    <div>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
         <BaseContainer title="基本样式">
           <EButton>默认按钮</EButton>
           <EButton type="primary">主要按钮</EButton>
@@ -53,6 +53,17 @@ const ButtonView = () => {
           <EButton type="info" plain>按钮</EButton>
           <EButton type="warning" plain>按钮</EButton>
           <EButton type="danger" plain className="test">按钮</EButton>
+        </BaseContainer>
+        <BaseContainer title="禁用样式">
+          <EButton disabled>禁用按钮</EButton>
+          <EButton type="primary" format="dashed" disabled>禁用按钮</EButton>
+          <EButton type="success" format="text" disabled>禁用按钮</EButton>
+          <EButton format="text" disabled>禁用按钮</EButton>
+          <EButton format="link" disabled>link(disabled)</EButton>
+          <EButton type="info" disabled>禁用按钮</EButton>
+          <EButton type="warning" disabled>禁用按钮</EButton>
+          <EButton type="danger" disabled>禁用按钮</EButton>
+          <EButton format="link" disabled>link(disabled)</EButton>
         </BaseContainer>
     </div>
   )

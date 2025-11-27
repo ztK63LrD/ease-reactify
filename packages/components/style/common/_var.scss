@@ -4,6 +4,7 @@
 
 // Color system
 $white: #FFFFFF !default;
+$gray-50: #f8f9fa !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #d9d9d9 !default;
@@ -14,6 +15,11 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
+
+/* 禁用颜色 */
+$disabled-color: #535353 !default;
+$disabled-bg: #ebebeb !default;
+$disabled-border: #c9c9c9 !default;
 
 // 基础颜色
 $blue: #0d6efd !default;
