@@ -26,6 +26,20 @@
         &:active {
             background-color: transparent;
         }
+        // 暗黑模式下的 default 按钮
+        html.dark &, .dark & {
+            color: #ffffff;
+            background-color: #1f1f1f;
+            border-color: #424242;
+            &:hover {
+                color: $primary;
+                border-color: $primary;
+                background-color: #2a2a2a;
+            }
+            &:active {
+                background-color: #1f1f1f;
+            }
+        }
     }
     // #region 处理不同type类型(使用映射简化样式应用)
     @each $type, $color in $button-colors {
@@ -40,6 +54,10 @@
             &:active {
                 background-color: $color;
             }
+            // 暗黑模式下确保边框与背景色一致，去掉浏览器默认的白色边框
+            html.dark &, .dark & {
+                border-color: $color;
+            }
         }
     }
     // #endregion
@@ -47,16 +65,43 @@
     // #region 处理不同格式类型
     @include m(dashed) {
         @include button-format-variant('dashed');
+        // 暗黑模式下的 dashed 按钮
+        html.dark &, .dark & {
+            color: #ffffff;
+            background-color: #1f1f1f;
+            border-color: #424242;
+            &:hover {
+                color: $primary;
+                border-color: $primary;
+                background-color: #2a2a2a;
+            }
+            &:active {
+                background-color: #1f1f1f;
+            }
+        }
     }
     @include m(text) {
         @include button-format-variant('text', (
-            'text-hover-bg': #F5F5F5,
-            'text-active-bg': #D9D9D9,
+            'text-hover-bg': rgba(255, 255, 255, 0.08),
+            'text-active-bg': rgba(255, 255, 255, 0.08),
             'text-color': $black,
             'button-colors': $button-colors,
             'namespace': $namespace,
             'modifier-separator': $modifier-separator
         ));
+        // 暗黑模式下的 text 按钮
+        html.dark &, .dark & {
+            color: #ffffff;
+            background-color: transparent;
+            border-color: transparent;
+            &:hover {
+                color: #ffffff;
+                background-color: rgba(255, 255, 255, 0.08);
+            }
+            &:active {
+                background-color: rgba(255, 255, 255, 0.16);
+            }
+        }
         // 处理禁用状态下的文本按钮样式（纯文本禁用，无背景无边框）
         &.is-disabled {
             @include text-format-disabled;
@@ -68,6 +113,18 @@
             'link-hover-color': $gray-800,
             'link-active-color': $gray-900
         ));
+        // 暗黑模式下的 link 按钮
+        html.dark &, .dark & {
+            color: rgba(255, 255, 255, 0.85);
+            background-color: transparent;
+            border-color: transparent;
+            &:hover {
+                color: #ffffff;
+            }
+            &:active {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
         // 处理不同类型的链接按钮样式（当同时设置了 type 和 format="link" 时）
         @each $type, $color in $button-colors {
             &.ease-button--#{$type} {
@@ -149,6 +206,20 @@
                 &:active {
                     background-color: $color;
                 }
+                // 暗黑模式下的朴素按钮
+                html.dark &, .dark & {
+                    $base-color: map.get($button-colors, $type);
+                    background-color: rgba($base-color, 0.15);
+                    border-color: rgba($base-color, 0.4);
+                    color: $base-color;
+                    &:hover {
+                        background-color: rgba($base-color, 0.25);
+                        border-color: $base-color;
+                    }
+                    &:active {
+                        background-color: rgba($base-color, 0.15);
+                    }
+                }
             }
         }
     }
@@ -164,6 +235,18 @@
         }
         &:hover {
             background-color: $disabled-bg !important;
+        }
+        // 暗黑模式下的禁用状态
+        html.dark &, .dark & {
+            color: #6b6b6b;
+            border-color: #3a3a3a;
+            background-color: #2d2d2d;
+            &:active {
+                background-color: #2d2d2d !important;
+            }
+            &:hover {
+                background-color: #2d2d2d !important;
+            }
         }
     }
     // 在通用 disabled 样式之后，再次确保 text 和 link 格式的禁用样式优先级最高（纯文本禁用）
