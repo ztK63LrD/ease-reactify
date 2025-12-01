@@ -31,12 +31,69 @@ const WaveEffect: React.FC<{ target: HTMLElement }> = ({ target }) => {
  
     // 颜色验证和获取合并
     const getWaveColor = (node: HTMLElement, defaultColor = 'blue') => {
-        const { borderColor, backgroundColor } = getComputedStyle(node);
+        const { borderColor, backgroundColor, color: textColor } = getComputedStyle(node);
+        
+        // 判断颜色是否有效（排除透明、纯白、纯黑）
         const isValid = (color: string) => color && !['transparent', 
             '#fff', '#ffffff', 'rgba(255, 255, 255, 1)', 'rgb(255, 255, 255)', // 白色系列
             '#000', '#000000', 'rgba(0, 0, 0, 1)', 'rgb(0, 0, 0)' // 黑色系列
-        ].includes(color); 
-        return isValid(backgroundColor) ? backgroundColor : isValid(borderColor) ? borderColor : defaultColor;
+        ].includes(color.toLowerCase().replace(/\s/g, '')); 
+        
+        // 计算颜色亮度的通用函数
+        const getBrightness = (color: string): number => {
+            if (!color || color === 'transparent') return -1;
+            
+            // 从 rgb() 或 rgba() 格式中提取 RGB 值
+            const match = color.match(/\d+/g);
+            if (match && match.length >= 3) {
+                const [r, g, b] = match.map(Number);
+                return (r * 299 + g * 587 + b * 114) / 1000;
+            }
+            
+            // 处理十六进制颜色格式
+            if (color.startsWith('#')) {
+                const hex = color.replace('#', '');
+                const r = parseInt(hex.substring(0, 2), 16);
+                const g = parseInt(hex.substring(2, 4), 16);
+                const b = parseInt(hex.substring(4, 6), 16);
+                return (r * 299 + g * 587 + b * 114) / 1000;
+            }
+            
+            return -1;
+        };
+        
+        const bgBrightness = getBrightness(backgroundColor);
+        
+        // 优先级逻辑：
+        // 1. 如果背景色是深色（亮度 < 60）或浅色（亮度 > 240），优先使用边框色
+        // 2. 如果背景色是中间色调（60-240），使用背景色
+        // 3. 最后考虑边框色、文字色、默认色
+        
+        // 背景色是深色或浅色，优先边框色
+        if (bgBrightness >= 0 && (bgBrightness < 60 || bgBrightness > 240)) {
+            if (isValid(borderColor)) {
+                return borderColor;
+            }
+            if (isValid(textColor)) {
+                return textColor;
+            }
+            if (isValid(backgroundColor)) {
+                return backgroundColor;
+            }
+            return defaultColor;
+        }
+        
+        // 背景色是中间色调，优先使用背景色
+        if (isValid(backgroundColor)) {
+            return backgroundColor;
+        }
+        if (isValid(borderColor)) {
+            return borderColor;
+        }
+        if (isValid(textColor)) {
+            return textColor;
+        }
+        return defaultColor;
     };
     // 同步样式信息
     const syncStyle = () => {

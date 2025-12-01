@@ -17,9 +17,9 @@ $gray-900: #212529 !default;
 $black: #000 !default;
 
 /* 禁用颜色 */
-$disabled-color: #535353 !default;
-$disabled-bg: #ebebeb !default;
-$disabled-border: #c9c9c9 !default;
+$disabled-color: rgba(0, 0, 0, 0.25) !default;
+$disabled-bg: rgba(0, 0, 0, 0.04) !default;
+$disabled-border: #d9d9d9 !default;
 
 // 基础颜色
 $blue: #0d6efd !default;

@@ -10,7 +10,7 @@ const Button = () => {
             <EButton format="dashed" block>dashed</EButton>
             <EButton block disabled>dashed</EButton>
             <EButton format="text" block>text</EButton>
-            <EButton format="link" block>link</EButton>
+            <EButton type='primary' format="link" block>link</EButton>
         </div>
     </div>
   )
