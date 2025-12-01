@@ -23,8 +23,25 @@ export default defineConfig({
 		optimizeDeps: {
 			include: ['react', 'react-dom']
 		},
+		resolve: {
+			dedupe: ['react', 'react-dom']
+		},
 		ssr: {
-			noExternal: ['ease-reactify']
+			noExternal: ['ease-reactify', 'vitepress-demo-plugin']
+		},
+		build: {
+			chunkSizeWarningLimit: 1000,
+			rollupOptions: {
+				output: {
+					manualChunks(id) {
+						if (id.includes('node_modules')) {
+							if (id.includes('react') || id.includes('react-dom')) {
+								return 'react-vendor'
+							}
+						}
+					}
+				}
+			}
 		}
 	},
 })

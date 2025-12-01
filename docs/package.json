@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev .",
-    "build": "vitepress build . --base=/ease-reactify/",
-    "preview": "vitepress preview ."
+    "build": "cross-env NODE_ENV=production vitepress build .",
+    "preview": "vitepress preview . --base=/ease-reactify/"
   },
   "dependencies": {
     "@ant-design/icons": "^6.1.0",
@@ -16,6 +16,7 @@
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "cross-env": "^7.0.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "sass": "^1.89.2",

@@ -4,6 +4,7 @@ import { GITHUB_URL, WEBSITE_URL } from './constants'
 
 export const shared = defineConfig({
   title: 'ease-reactify',
+  base: process.env.NODE_ENV === 'production' ? '/ease-reactify/' : '/',
   rewrites: {
     'zh/:rest*': ':rest*',
   },
